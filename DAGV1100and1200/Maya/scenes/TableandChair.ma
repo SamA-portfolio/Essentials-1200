@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
 //Name: TableandChair.ma
-//Last modified: Sat, Sep 20, 2025 02:55:03 AM
+//Last modified: Sat, Sep 20, 2025 02:58:01 AM
 //Codeset: 1252
 file -rdi 1 -ns "Vase_and_plant" -rfn "Vase_and_plantRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Github/Essentials-1200/DAGV1100and1200/Maya//scenes/Vase and plant.ma";
@@ -14,21 +14,21 @@ fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202507081222-4d6919b75c";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26100)";
-fileInfo "UUID" "D56A0F2F-491A-04B4-0752-CB8E488DC6BF";
+fileInfo "UUID" "8164AD98-4BE1-7677-D1E2-DBA938595222";
 createNode transform -s -n "persp";
 	rename -uid "2312D274-446C-E975-D25A-7DA36234D082";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 39.957535161179976 23.64468358040866 29.244494896690075 ;
-	setAttr ".r" -type "double3" -18.338352727352074 53.799999999994377 0 ;
+	setAttr ".t" -type "double3" 33.450948017847736 18.060003495932833 38.131718285017037 ;
+	setAttr ".r" -type "double3" -12.938352727349187 42.199999999986687 2.1466893546592684e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "A26B4708-4F9F-041D-9FB2-E390644D9DCC";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 52.16532090599317;
+	setAttr ".coi" 67.120530930087767;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" 0 7.2320175170898438 0 ;
+	setAttr ".tp" -type "double3" -10 1.2507239951654958 -10 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "F484FC1A-42AC-219C-E72C-E082C615A611";
@@ -5260,6 +5260,7 @@ createNode script -n "sceneConfigurationScriptNode";
 	setAttr ".st" 6;
 createNode displayLayer -n "walllyr";
 	rename -uid "51340BD6-4BAE-EB5D-3E0F-F2971CAACB4E";
+	setAttr ".dt" 2;
 	setAttr ".ufem" -type "stringArray" 0  ;
 	setAttr ".do" 2;
 createNode groupId -n "groupId34";
@@ -5545,6 +5546,7 @@ connectAttr "walllyr.di" "WallMesh2.do";
 connectAttr "polySplitRing2.out" "BookshelfShape.i";
 connectAttr "groupId39.id" "BookshelfShape.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "BookshelfShape.iog.og[0].gco";
+connectAttr "walllyr.di" "Wallmesh1.do";
 connectAttr "groupId38.id" "Wallmesh.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "Wallmesh.iog.og[0].gco";
 connectAttr "groupId34.id" "Wallmesh.ciog.cog[0].cgid";
