@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
 //Name: TableandChair.ma
-//Last modified: Mon, Oct 27, 2025 03:53:53 PM
+//Last modified: Fri, Oct 31, 2025 11:50:28 PM
 //Codeset: 1252
 file -rdi 1 -ns "Vase_and_plant" -rfn "Vase_and_plantRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Github/Essentials-1200/DAGV1100and1200/Maya//scenes/Vase and plant.ma";
@@ -20,7 +20,9 @@ requires maya "2026";
 requires -nodeType "materialxStack" -nodeType "MaterialXSurfaceShader" -dataType "MxDocumentStackData"
 		 "LookdevXMaya" "1.9.0";
 requires "stereoCamera" "10.0";
-requires "mtoa" "5.5.3";
+requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiImagerDenoiserOidn"
+		 "mtoa" "5.5.3";
+requires -nodeType "renderSetup" -nodeType "lightItem" -nodeType "lightEditor" "renderSetup.py" "1.0";
 requires "stereoCamera" "10.0";
 currentUnit -l centimeter -a degree -t film;
 fileInfo "application" "maya";
@@ -28,23 +30,23 @@ fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202507081222-4d6919b75c";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26100)";
-fileInfo "UUID" "D72E0730-4B4D-9CE4-7C98-9FA4DB75C579";
+fileInfo "UUID" "95809171-452B-3CBD-B358-23A25E72A98A";
 createNode transform -s -n "persp";
 	rename -uid "2312D274-446C-E975-D25A-7DA36234D082";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 2.0662378676150626 11.128776536600741 27.343358021821338 ;
-	setAttr ".r" -type "double3" -12.599999999995788 9.4000000000003716 0 ;
+	setAttr ".t" -type "double3" 50.99158764343035 19.261846720520044 25.331670625505872 ;
+	setAttr ".r" -type "double3" -11.400000000000281 60.600000000001245 0 ;
 	setAttr ".rp" -type "double3" -7.1054273576010019e-15 0 3.5527136788005009e-15 ;
 	setAttr ".rpt" -type "double3" 5.9154096416001567e-15 2.1867320783200619e-15 2.8829214032814157e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "A26B4708-4F9F-041D-9FB2-E390644D9DCC";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 32.535454376922324;
+	setAttr ".coi" 65.215399574244231;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" 3.5679402936479176 1.6967273563388603 -10.3213892808234 ;
+	setAttr ".tp" -type "double3" -10 9.4763860702514648 -10.000000476837158 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "F484FC1A-42AC-219C-E72C-E082C615A611";
@@ -3610,7 +3612,6 @@ createNode mesh -n "MugmeshShape" -p "Mugmesh";
 	setAttr ".iog[0].og[2].gcl" -type "componentList" 3 "f[60:79]" "f[100:119]" "f[380:599]";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr -s 2 ".ciog[0].cog";
 	setAttr -s 7 ".gtag";
 	setAttr ".gtag[0].gtagnm" -type "string" "bottom";
 	setAttr ".gtag[0].gtagcmp" -type "componentList" 1 "f[20:39]";
@@ -5370,7 +5371,7 @@ createNode mesh -n "Couch:polySurface1Shape" -p "Couch:polySurface2";
 	setAttr ".gtag[5].gtagnm" -type "string" "top";
 	setAttr ".gtag[5].gtagcmp" -type "componentList" 27 "f[1]" "f[52:55]" "f[60:62]" "f[64]" "f[66:67]" "f[70]" "f[73:74]" "f[76]" "f[103]" "f[109]" "f[126:128]" "f[131:132]" "f[138:139]" "f[147]" "f[166:167]" "f[174:175]" "f[183:186]" "f[190:193]" "f[209]" "f[602:604]" "f[607:608]" "f[614:615]" "f[623]" "f[642:643]" "f[650:651]" "f[659:662]" "f[666:669]";
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr -s 873 ".uvst[0].uvsp";
+	setAttr -s 897 ".uvst[0].uvsp";
 	setAttr ".uvst[0].uvsp[0:249]" -type "float2" 0.375 0 0.625 0 0.375 0.25
 		 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0 0.875
 		 0.25 0.125 0 0.125 0.25 0.375 0 0.625 0 0.625 0.25 0.375 0.25 0.375 0.5 0.625 0.5
@@ -5492,7 +5493,7 @@ createNode mesh -n "Couch:polySurface1Shape" -p "Couch:polySurface2";
 		 0.125 0.80000001 0.25 0.80000001 0 0.89999998 0 1 0 0.80000001 0.5 0.80000001 0.375
 		 0.69999999 1 0.60000002 1 0.60000002 0.875 0.69999999 0.875 0.60000002 0.625 0.69999999
 		 0.625 0.69999999 0.75 0.60000002 0.75 1 0.625 1 0.75 0.89999998 0.75;
-	setAttr ".uvst[0].uvsp[750:872]" 0.89999998 0.625 0.80000001 0.75 0.80000001
+	setAttr ".uvst[0].uvsp[750:896]" 0.89999998 0.625 0.80000001 0.75 0.80000001
 		 0.625 0.80000001 1 0.80000001 0.875 0.37823141 0.99606252 0.40373003 0.91675544 0.37754697
 		 0.75268787 0.37823141 0.75393748 0.45695511 0.75 0.37573755 0.75 0.37086532 0 0.37106252
 		 0.024997517 0.1289375 0.024997547 0.12721269 0 0.37823141 0.024997536 0.38025549
@@ -5519,7 +5520,10 @@ createNode mesh -n "Couch:polySurface1Shape" -p "Couch:polySurface2";
 		 0.25010484 0.62316507 0.24326715 0.37684798 0.50660479 0.375 0.5 0.125 0.25 0.3776468
 		 0.49989265 0.875 0.25 0.625 0.5 0.62315243 0.50660324 0.62239259 0.4997856 0.37771684
 		 0.74988353 0.375 0.75 0.125 0 0.37684911 0.74339211 0.875 0 0.625 0.75 0.6221711
-		 0.74955678 0.62314951 0.74338758;
+		 0.74955678 0.62314951 0.74338758 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625
+		 0.75 0.625 0 0.625 0.25 0.375 0 0.375 0.25 0.625 0 0.875 0 0.875 0.25 0.625 0.25
+		 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.625 0 0.625 0.25 0.375 0 0.375 0.25 0.625
+		 0 0.875 0 0.875 0.25;
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
@@ -5917,17 +5921,17 @@ createNode mesh -n "Couch:polySurface1Shape" -p "Couch:polySurface2";
 		f 4 0 1 2 3
 		mu 0 4 27 1 3 28
 		f 4 4 5 6 7
-		mu 0 4 2 3 5 4
+		mu 0 4 2 873 5 4
 		f 4 8 9 10 11
-		mu 0 4 4 5 7 6
+		mu 0 4 874 875 7 6
 		f 4 12 13 14 15
-		mu 0 4 6 7 9 8
+		mu 0 4 876 877 9 8
 		f 4 16 17 18 19
-		mu 0 4 1 10 11 3
+		mu 0 4 878 10 11 879
 		f 4 20 21 22 23
-		mu 0 4 26 27 28 29
+		mu 0 4 26 880 881 29
 		f 4 -15 24 -1 25
-		mu 0 4 0 1 15 14
+		mu 0 4 0 882 15 14
 		f 4 -20 26 27 28
 		mu 0 4 30 31 32 33
 		f 4 -22 31 32 33
@@ -5937,21 +5941,21 @@ createNode mesh -n "Couch:polySurface1Shape" -p "Couch:polySurface2";
 		f 4 -18 36 37 38
 		mu 0 4 38 39 40 41
 		f 4 -13 39 -11 40
-		mu 0 4 7 6 21 20
+		mu 0 4 877 876 21 20
 		f 4 -24 41 42 43
 		mu 0 4 42 43 44 45
 		f 4 -14 44 -17 45
-		mu 0 4 1 10 23 22
+		mu 0 4 882 883 23 22
 		f 4 -6 46 -19 47
-		mu 0 4 11 3 25 24
+		mu 0 4 884 873 25 24
 		f 4 -16 48 -21 49
-		mu 0 4 12 0 27 26
+		mu 0 4 12 0 880 26
 		f 4 -8 50 -23 51
-		mu 0 4 2 13 29 28
+		mu 0 4 2 13 29 881
 		f 4 52 46 19 45
-		mu 0 4 1 3 31 30
+		mu 0 4 882 873 31 30
 		f 4 -31 54 -27 -47
-		mu 0 4 3 16 32 31
+		mu 0 4 873 16 32 31
 		f 4 -2 55 -28 -55
 		mu 0 4 16 15 33 32
 		f 4 56 57 58 59
@@ -5963,7 +5967,7 @@ createNode mesh -n "Couch:polySurface1Shape" -p "Couch:polySurface2";
 		f 4 -30 -52 -34 -65
 		mu 0 4 17 2 34 37
 		f 4 65 44 17 47
-		mu 0 4 5 7 39 38
+		mu 0 4 5 877 39 38
 		f 4 66 67 68 69
 		mu 0 4 54 55 56 57
 		f 4 -10 70 -38 71
@@ -5971,7 +5975,7 @@ createNode mesh -n "Couch:polySurface1Shape" -p "Couch:polySurface2";
 		f 4 -35 -48 -39 -71
 		mu 0 4 19 5 38 41
 		f 4 72 50 23 49
-		mu 0 4 6 4 43 42
+		mu 0 4 876 4 43 42
 		f 4 -36 73 -42 -51
 		mu 0 4 4 18 44 43
 		f 4 -12 74 -43 -74
@@ -5979,9 +5983,9 @@ createNode mesh -n "Couch:polySurface1Shape" -p "Couch:polySurface2";
 		f 4 75 76 77 78
 		mu 0 4 58 59 60 61
 		f 4 -25 79 -57 80
-		mu 0 4 15 1 47 46
+		mu 0 4 15 882 47 46
 		f 4 -46 81 -58 -80
-		mu 0 4 1 30 48 47
+		mu 0 4 882 30 48 47
 		f 4 -29 82 -59 -82
 		mu 0 4 30 33 49 48
 		f 4 -56 -81 -60 -83
@@ -5991,17 +5995,17 @@ createNode mesh -n "Couch:polySurface1Shape" -p "Couch:polySurface2";
 		f 4 -49 -84 -64 -86
 		mu 0 4 35 0 50 53
 		f 4 -41 86 -67 87
-		mu 0 4 7 20 55 54
+		mu 0 4 877 20 55 54
 		f 4 -72 88 -68 -87
 		mu 0 4 20 40 56 55
 		f 4 -37 89 -69 -89
 		mu 0 4 40 39 57 56
 		f 4 -45 -88 -70 -90
-		mu 0 4 39 7 54 57
+		mu 0 4 39 877 54 57
 		f 4 -40 90 -76 91
-		mu 0 4 21 6 59 58
+		mu 0 4 21 876 59 58
 		f 4 -50 92 -77 -91
-		mu 0 4 6 42 60 59
+		mu 0 4 876 42 60 59
 		f 4 -44 93 -78 -93
 		mu 0 4 42 45 61 60
 		f 4 12 -66 -96 -95
@@ -6333,21 +6337,21 @@ createNode mesh -n "Couch:polySurface1Shape" -p "Couch:polySurface2";
 		f 4 427 429 -432 -433
 		mu 0 4 289 290 291 292
 		f 4 414 420 -416 -420
-		mu 0 4 293 291 294 295
+		mu 0 4 293 885 294 295
 		f 4 435 437 -440 -441
-		mu 0 4 295 294 296 297
+		mu 0 4 886 887 296 297
 		f 4 416 424 -414 -424
-		mu 0 4 297 296 298 299
+		mu 0 4 888 889 298 299
 		f 4 -444 -446 -448 -449
-		mu 0 4 290 300 301 291
+		mu 0 4 890 300 301 891
 		f 4 451 453 455 456
-		mu 0 4 302 289 292 303
+		mu 0 4 302 892 893 303
 		f 4 413 426 -428 -426
-		mu 0 4 304 290 305 306
+		mu 0 4 304 894 305 306
 		f 4 475 477 -480 -481
 		mu 0 4 307 308 309 310
 		f 4 -415 430 431 -429
-		mu 0 4 291 293 311 312
+		mu 0 4 885 293 311 312
 		f 4 -484 485 487 -489
 		mu 0 4 313 314 315 316
 		f 4 415 434 -436 -434
@@ -6355,25 +6359,25 @@ createNode mesh -n "Couch:polySurface1Shape" -p "Couch:polySurface2";
 		f 4 491 493 -496 -497
 		mu 0 4 319 320 321 322
 		f 4 -417 438 439 -437
-		mu 0 4 296 297 323 324
+		mu 0 4 889 888 323 324
 		f 4 -500 501 503 -505
 		mu 0 4 325 326 327 328
 		f 4 -425 441 443 -443
-		mu 0 4 290 300 329 330
+		mu 0 4 894 895 329 330
 		f 4 -421 446 447 -445
-		mu 0 4 301 291 331 332
+		mu 0 4 896 885 331 332
 		f 4 423 450 -452 -450
-		mu 0 4 333 304 289 302
+		mu 0 4 333 304 892 302
 		f 4 419 454 -456 -453
-		mu 0 4 293 334 303 292
+		mu 0 4 293 334 303 893
 		f 4 418 458 -460 -458
-		mu 0 4 290 291 335 336
+		mu 0 4 894 885 335 336
 		f 4 428 460 -462 -459
-		mu 0 4 291 312 337 335
+		mu 0 4 885 312 337 335
 		f 4 -430 462 463 -461
 		mu 0 4 312 305 338 337
 		f 4 -427 457 464 -463
-		mu 0 4 305 290 336 338
+		mu 0 4 305 894 336 338
 		f 4 -418 465 467 -467
 		mu 0 4 293 304 339 340
 		f 4 425 468 -470 -466
@@ -6399,7 +6403,7 @@ createNode mesh -n "Couch:polySurface1Shape" -p "Couch:polySurface2";
 		f 4 -473 482 488 -487
 		mu 0 4 342 340 313 316
 		f 4 422 490 -492 -490
-		mu 0 4 294 296 320 319
+		mu 0 4 294 889 320 319
 		f 4 523 525 -528 -529
 		mu 0 4 351 352 353 354
 		f 4 -438 494 495 -493
@@ -6407,7 +6411,7 @@ createNode mesh -n "Couch:polySurface1Shape" -p "Couch:polySurface2";
 		f 4 -435 489 496 -495
 		mu 0 4 317 294 319 322
 		f 4 -422 497 499 -499
-		mu 0 4 297 295 326 325
+		mu 0 4 888 295 326 325
 		f 4 433 500 -502 -498
 		mu 0 4 295 318 327 326
 		f 4 440 502 -504 -501
@@ -6431,17 +6435,17 @@ createNode mesh -n "Couch:polySurface1Shape" -p "Couch:polySurface2";
 		f 4 -482 513 520 -519
 		mu 0 4 314 339 347 350
 		f 4 436 522 -524 -522
-		mu 0 4 296 324 352 351
+		mu 0 4 889 324 352 351
 		f 4 492 524 -526 -523
 		mu 0 4 324 321 353 352
 		f 4 -494 526 527 -525
 		mu 0 4 321 320 354 353
 		f 4 -491 521 528 -527
-		mu 0 4 320 296 351 354
+		mu 0 4 320 889 351 354
 		f 4 -439 529 531 -531
-		mu 0 4 323 297 356 355
+		mu 0 4 323 888 356 355
 		f 4 498 532 -534 -530
-		mu 0 4 297 325 357 356
+		mu 0 4 888 325 357 356
 		f 4 504 534 -536 -533
 		mu 0 4 325 328 358 357
 		f 4 -503 530 536 -535
@@ -7303,7 +7307,6 @@ createNode transform -n "polySurface1";
 createNode mesh -n "polySurfaceShape3" -p "polySurface1";
 	rename -uid "D32051AA-4B0A-66D6-1C25-4798C97CE1CB";
 	setAttr -k off ".v";
-	setAttr -s 2 ".iog[0].og";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr -s 7 ".gtag";
@@ -7340,7 +7343,7 @@ createNode mesh -n "polySurfaceShape3" -p "polySurface1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 42 ".pt[2:41]" -type "float3"  0 3.7252903e-09 0 0 3.7252903e-09 
+	setAttr -s 40 ".pt[2:41]" -type "float3"  0 3.7252903e-09 0 0 3.7252903e-09 
 		0 0 0 0 0 3.7252903e-09 0 0 0 0 0 0 0 0 3.7252903e-09 0 0 3.7252903e-09 0 0 3.7252903e-09 
 		0 0 3.7252903e-09 0 0 3.7252903e-09 0 0 3.7252903e-09 0 0 3.7252903e-09 0 0 3.7252903e-09 
 		0 0 3.7252903e-09 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9.3132257e-10 0 0 1.1920929e-07 0 0 
@@ -7449,8 +7452,37 @@ createNode mesh -n "polySurfaceShape3" -p "polySurface1";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "ambientLight1";
+	rename -uid "9CA64936-44CA-6013-1969-3BAEB082D77E";
+	setAttr ".t" -type "double3" -32.582975330014463 21.631148619788576 0 ;
+	setAttr ".s" -type "double3" 1.6537989903830002 1.6537989903830002 1.6537989903830002 ;
+createNode ambientLight -n "ambientLightShape1" -p "ambientLight1";
+	rename -uid "023B4A8B-4F0E-C9E8-1818-6391E46713FD";
+	setAttr -k off ".v";
+	setAttr ".cl" -type "float3" 1 0.60299999 0.60299999 ;
+	setAttr ".urs" no;
+createNode transform -n "spotLight1";
+	rename -uid "1E8890B2-4130-BC5E-2F58-188B216D5BD4";
+	setAttr ".t" -type "double3" -10.062583524721028 9.2079349924435867 -10.000000000000002 ;
+	setAttr ".r" -type "double3" -90.000000000000028 0 0 ;
+	setAttr ".s" -type "double3" 3.1297710276908863 3.1297710276908863 3.1297710276908863 ;
+createNode spotLight -n "spotLightShape1" -p "spotLight1";
+	rename -uid "0FFC1A52-455E-0134-B352-1BBA04E9BBC0";
+	setAttr -k off ".v";
+	setAttr ".cl" -type "float3" 0.98919255 1 0.74399996 ;
+	setAttr ".in" 1.8452380895614624;
+createNode transform -n "spotLight2";
+	rename -uid "82DC0D82-4440-252E-0411-35BBD066AA3F";
+	setAttr ".t" -type "double3" -10.011189116353142 9.7063026738175946 -10 ;
+	setAttr ".r" -type "double3" 90.000000000000028 0 0 ;
+	setAttr ".s" -type "double3" 3.2015854943734205 3.2015854943734205 3.2015854943734205 ;
+createNode spotLight -n "spotLightShape2" -p "spotLight2";
+	rename -uid "F026D344-4B16-CF67-8C21-159E39BAD35B";
+	setAttr -k off ".v";
+	setAttr ".cl" -type "float3" 0.98919255 1 0.74399996 ;
+	setAttr ".in" 1.4880952835083008;
 createNode fosterParent -n "Vase_and_plantRNfosterParent1";
-	rename -uid "1944958E-46B7-46E3-0ABC-9CB80E13D53C";
+	rename -uid "278FDFB8-4349-8E21-A065-698319A4204F";
 createNode transform -n "pSphere1" -p "Vase_and_plantRNfosterParent1";
 	rename -uid "A14DBEC9-440D-BB8C-DC38-0996F3CB07BB";
 	setAttr ".t" -type "double3" -0.013801358459886615 10.958139023033718 -0.034443734717605423 ;
@@ -7813,7 +7845,7 @@ createNode mesh -n "Dirt1" -p "pSphere1";
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode fosterParent -n "CouchRNfosterParent1";
-	rename -uid "48CF9BBB-4011-A08A-FAA5-06A908CAADD3";
+	rename -uid "FE9F4F1F-4A20-0E53-9ADB-DA9914769BF8";
 createNode transform -n "Couch:transform5" -p "CouchRNfosterParent1";
 	rename -uid "2B950037-4C8B-BDC2-5F53-3F841344555C";
 	setAttr ".v" no;
@@ -7836,15 +7868,15 @@ createNode transform -n "Couch:transform6" -p "CouchRNfosterParent1";
 	rename -uid "2BB47BBB-4571-EC8D-8F7F-D9B24E47C3EE";
 	setAttr ".v" no;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "E3C49877-4703-17E9-95D1-26B811218E53";
+	rename -uid "AF6D0EF9-4B4B-01B8-ADA1-DB879481DF7B";
 	setAttr -s 28 ".lnk";
 	setAttr -s 28 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "ED24BED3-4BAA-B217-511C-538BEC724320";
+	rename -uid "7A413C0A-4FE7-CDC1-1DC8-048DA56AF3FD";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "A4BA802D-4CD8-8A29-6F92-6AA780A3703C";
+	rename -uid "EF33CF3C-411C-E3FA-5EED-D89D5748F65E";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "F875FBF1-4D67-20FD-FAC7-B0B135B0F465";
+	rename -uid "29712AA5-4454-E8A8-EAC7-FA8C93890966";
 	setAttr ".cdl" 3;
 	setAttr -s 5 ".dli[1:4]"  1 2 0 3;
 	setAttr -s 3 ".dli";
@@ -7852,7 +7884,7 @@ createNode displayLayer -n "defaultLayer";
 	rename -uid "1D3EA17D-4FAD-5F8B-0B25-A29514ECD05E";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "E75F7F36-4439-2A32-7AE9-42862A32E7BB";
+	rename -uid "B65BFEAA-47AE-2B67-47EE-EFAC103602D6";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "96C6D0FE-48C0-5105-9799-298DD4DD9388";
 	setAttr ".g" yes;
@@ -7941,18 +7973,18 @@ createNode reference -n "Vase_and_plantRN";
 		
 		2 "|Vase_and_plant:Vase" "scale" " -type \"double3\" 0.15774773019589294 0.15774773019589294 0.15774773019589294"
 		
-		3 "|Vase_and_plant:Vase|Vase_and_plant:VaseShape.instObjGroups" ":initialShadingGroup.dagSetMembers" 
-		"-na"
 		3 "|Vase_and_plant:Vase|Vase_and_plant:Dirt|Vase_and_plant:Leaf4|Vase_and_plant:LeafShape4.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Vase_and_plant:Vase|Vase_and_plant:Dirt|Vase_and_plant:Leaf1|Vase_and_plant:LeafShape1.instObjGroups" 
+		3 "|Vase_and_plant:Vase|Vase_and_plant:Dirt|Vase_and_plant:Leaf2|Vase_and_plant:LeafShape2.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Vase_and_plant:Vase|Vase_and_plant:Dirt|Vase_and_plant:DirtShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Vase_and_plant:Vase|Vase_and_plant:Dirt|Vase_and_plant:Leaf3|Vase_and_plant:LeafShape3.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Vase_and_plant:Vase|Vase_and_plant:Dirt|Vase_and_plant:Leaf2|Vase_and_plant:LeafShape2.instObjGroups" 
+		3 "|Vase_and_plant:Vase|Vase_and_plant:Dirt|Vase_and_plant:Leaf1|Vase_and_plant:LeafShape1.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Vase_and_plant:Vase|Vase_and_plant:VaseShape.instObjGroups" ":initialShadingGroup.dagSetMembers" 
+		"-na"
 		5 3 "Vase_and_plantRN" "|Vase_and_plant:Vase|Vase_and_plant:VaseShape.instObjGroups" 
 		"Vase_and_plantRN.placeHolderList[1]" ":initialShadingGroup.dsm"
 		5 3 "Vase_and_plantRN" "|Vase_and_plant:Vase|Vase_and_plant:Dirt|Vase_and_plant:DirtShape.instObjGroups" 
@@ -7972,7 +8004,7 @@ createNode reference -n "CouchRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"CouchRN"
 		"CouchRN" 0
-		"CouchRN" 658
+		"CouchRN" 190
 		0 "|Couch:Sofa_BottomShape" "|CouchRNfosterParent1|Couch:transform6" "-s -r "
 		
 		0 "|Couch:Sofa_bottom" "|CouchRNfosterParent1|Couch:transform9" "-s -r "
@@ -8002,148 +8034,9 @@ createNode reference -n "CouchRN";
 		" 1"
 		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetName" 
 		" -type \"string\" \"map1\""
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints" 
-		" -s 70"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[0]" 
-		" -type \"float2\" 0.375 0"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[1]" 
-		" -type \"float2\" 0.625 0"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[2]" 
-		" -type \"float2\" 0.375 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[3]" 
-		" -type \"float2\" 0.625 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[4]" 
-		" -type \"float2\" 0.375 0.5"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[5]" 
-		" -type \"float2\" 0.625 0.5"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[6]" 
-		" -type \"float2\" 0.375 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[7]" 
-		" -type \"float2\" 0.625 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[8]" 
-		" -type \"float2\" 0.375 1"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[9]" 
-		" -type \"float2\" 0.625 1"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[10]" 
-		" -type \"float2\" 0.875 0"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[11]" 
-		" -type \"float2\" 0.875 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[12]" 
-		" -type \"float2\" 0.125 0"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[13]" 
-		" -type \"float2\" 0.125 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[14]" 
-		" -type \"float2\" 0.375 0"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[15]" 
-		" -type \"float2\" 0.625 0"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[16]" 
-		" -type \"float2\" 0.625 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[17]" 
-		" -type \"float2\" 0.375 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[18]" 
-		" -type \"float2\" 0.375 0.5"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[19]" 
-		" -type \"float2\" 0.625 0.5"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[20]" 
-		" -type \"float2\" 0.625 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[21]" 
-		" -type \"float2\" 0.375 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[22]" 
-		" -type \"float2\" 0.625 0"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[23]" 
-		" -type \"float2\" 0.875 0"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[24]" 
-		" -type \"float2\" 0.875 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[25]" 
-		" -type \"float2\" 0.625 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[26]" 
-		" -type \"float2\" 0.125 0"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[27]" 
-		" -type \"float2\" 0.375 0"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[28]" 
-		" -type \"float2\" 0.375 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[29]" 
-		" -type \"float2\" 0.125 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[30]" 
-		" -type \"float2\" 0.625 0"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[31]" 
-		" -type \"float2\" 0.625 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[32]" 
-		" -type \"float2\" 0.625 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[33]" 
-		" -type \"float2\" 0.625 0"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[34]" 
-		" -type \"float2\" 0.375 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[35]" 
-		" -type \"float2\" 0.375 0"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[36]" 
-		" -type \"float2\" 0.375 0"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[37]" 
-		" -type \"float2\" 0.375 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[38]" 
-		" -type \"float2\" 0.625 0"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[39]" 
-		" -type \"float2\" 0.625 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[40]" 
-		" -type \"float2\" 0.625 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[41]" 
-		" -type \"float2\" 0.625 0"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[42]" 
-		" -type \"float2\" 0.375 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[43]" 
-		" -type \"float2\" 0.375 0"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[44]" 
-		" -type \"float2\" 0.375 0"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[45]" 
-		" -type \"float2\" 0.375 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[46]" 
-		" -type \"float2\" 0.625 0.5"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[47]" 
-		" -type \"float2\" 0.625 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[48]" 
-		" -type \"float2\" 0.625 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[49]" 
-		" -type \"float2\" 0.625 0.5"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[50]" 
-		" -type \"float2\" 0.375 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[51]" 
-		" -type \"float2\" 0.375 0.5"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[52]" 
-		" -type \"float2\" 0.375 0.5"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[53]" 
-		" -type \"float2\" 0.375 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[54]" 
-		" -type \"float2\" 0.625 0"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[55]" 
-		" -type \"float2\" 0.625 0"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[56]" 
-		" -type \"float2\" 0.625 0"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[57]" 
-		" -type \"float2\" 0.625 0"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[58]" 
-		" -type \"float2\" 0.375 0"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[59]" 
-		" -type \"float2\" 0.375 0"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[60]" 
-		" -type \"float2\" 0.375 0"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[61]" 
-		" -type \"float2\" 0.375 0"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[62]" 
-		" -type \"float2\" 0.625 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[63]" 
-		" -type \"float2\" 0.625 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[64]" 
-		" -type \"float2\" 0.625 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[65]" 
-		" -type \"float2\" 0.625 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[66]" 
-		" -type \"float2\" 0.375 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[67]" 
-		" -type \"float2\" 0.375 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[68]" 
-		" -type \"float2\" 0.375 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvSet[0].uvSetPoints[69]" 
-		" -type \"float2\" 0.375 0.75"
+		2 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape" "uvst[0].uvsp[0:69]" 
+		" -s 70 -type \"float2\" 0.375 0 0.625 0 0.375 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0 0.875 0.25 0.125 0 0.125 0.25 0.375 0 0.625 0 0.625 0.25 0.375 0.25 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75 0.625 0 0.875 0 0.875 0.25 0.625 0.25 0.125 0 0.375 0 0.375 0.25 0.125 0.25 0.625 0 0.625 0.25 0.625 0.25 0.625 0 0.375 0.25 0.375 0 0.375 0 0.375 0.25 0.625 0 0.625 0.25 0.625 0.25 0.625 0 0.375 0.25 0.375 0 0.375 0 0.375 0.25 0.625 0.5 0.625 0.75 0.625 0.75 0.625 0.5 0.375 0.75 0.375 0.5 0.375 0.5 0.375 0.75 0.625 0 0.625 0 0.625 0 0.625 0 0.375 0 0.375 0 0.375 0 0.375 0 0.625 0.75 0.625 0.75 0.625 0.75 0.625 0.75 0.375 0.75 0.375 0.75 0.375 0.75 0.375 0.75"
+		
 		2 "|Couch:pCube2" "translate" " -type \"double3\" -9.53549940437259025 -16.82700386394315828 -0.11438364602902119"
 		
 		2 "|Couch:pCube2" "rotate" " -type \"double3\" 0 89.99999999999997158 0"
@@ -8159,34 +8052,7 @@ createNode reference -n "CouchRN";
 		
 		2 "|Couch:pCube2|Couch:pCubeShape2" "uvSet[0].uvSetName" " -type \"string\" \"map1\""
 		
-		2 "|Couch:pCube2|Couch:pCubeShape2" "uvSet[0].uvSetPoints" " -s 14"
-		2 "|Couch:pCube2|Couch:pCubeShape2" "uvSet[0].uvSetPoints[0]" " -type \"float2\" 0.375 0"
-		
-		2 "|Couch:pCube2|Couch:pCubeShape2" "uvSet[0].uvSetPoints[1]" " -type \"float2\" 0.625 0"
-		
-		2 "|Couch:pCube2|Couch:pCubeShape2" "uvSet[0].uvSetPoints[2]" " -type \"float2\" 0.375 0.25"
-		
-		2 "|Couch:pCube2|Couch:pCubeShape2" "uvSet[0].uvSetPoints[3]" " -type \"float2\" 0.625 0.25"
-		
-		2 "|Couch:pCube2|Couch:pCubeShape2" "uvSet[0].uvSetPoints[4]" " -type \"float2\" 0.375 0.5"
-		
-		2 "|Couch:pCube2|Couch:pCubeShape2" "uvSet[0].uvSetPoints[5]" " -type \"float2\" 0.625 0.5"
-		
-		2 "|Couch:pCube2|Couch:pCubeShape2" "uvSet[0].uvSetPoints[6]" " -type \"float2\" 0.375 0.75"
-		
-		2 "|Couch:pCube2|Couch:pCubeShape2" "uvSet[0].uvSetPoints[7]" " -type \"float2\" 0.625 0.75"
-		
-		2 "|Couch:pCube2|Couch:pCubeShape2" "uvSet[0].uvSetPoints[8]" " -type \"float2\" 0.375 1"
-		
-		2 "|Couch:pCube2|Couch:pCubeShape2" "uvSet[0].uvSetPoints[9]" " -type \"float2\" 0.625 1"
-		
-		2 "|Couch:pCube2|Couch:pCubeShape2" "uvSet[0].uvSetPoints[10]" " -type \"float2\" 0.875 0"
-		
-		2 "|Couch:pCube2|Couch:pCubeShape2" "uvSet[0].uvSetPoints[11]" " -type \"float2\" 0.875 0.25"
-		
-		2 "|Couch:pCube2|Couch:pCubeShape2" "uvSet[0].uvSetPoints[12]" " -type \"float2\" 0.125 0"
-		
-		2 "|Couch:pCube2|Couch:pCubeShape2" "uvSet[0].uvSetPoints[13]" " -type \"float2\" 0.125 0.25"
+		2 "|Couch:pCube2|Couch:pCubeShape2" "uvst[0].uvsp[0:13]" " -s 14 -type \"float2\" 0.375 0 0.625 0 0.375 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0 0.875 0.25 0.125 0 0.125 0.25"
 		
 		2 "|Couch:polySurface1" "translate" " -type \"double3\" 0 0 0"
 		2 "|Couch:polySurface1" "rotatePivot" " -type \"double3\" 0 0.6318553686130024 0"
@@ -8199,164 +8065,9 @@ createNode reference -n "CouchRN";
 		" -s 2"
 		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetName" 
 		" -type \"string\" \"map1\""
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints" 
-		" -s 78"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[0]" 
-		" -type \"float2\" 0.375 0"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[1]" 
-		" -type \"float2\" 0.625 0"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[2]" 
-		" -type \"float2\" 0.375 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[3]" 
-		" -type \"float2\" 0.625 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[4]" 
-		" -type \"float2\" 0.375 0.5"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[5]" 
-		" -type \"float2\" 0.625 0.5"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[6]" 
-		" -type \"float2\" 0.375 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[7]" 
-		" -type \"float2\" 0.625 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[8]" 
-		" -type \"float2\" 0.375 1"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[9]" 
-		" -type \"float2\" 0.625 1"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[10]" 
-		" -type \"float2\" 0.875 0"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[11]" 
-		" -type \"float2\" 0.875 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[12]" 
-		" -type \"float2\" 0.125 0"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[13]" 
-		" -type \"float2\" 0.125 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[14]" 
-		" -type \"float2\" 0.375 0"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[15]" 
-		" -type \"float2\" 0.625 0"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[16]" 
-		" -type \"float2\" 0.625 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[17]" 
-		" -type \"float2\" 0.375 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[18]" 
-		" -type \"float2\" 0.375 0.5"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[19]" 
-		" -type \"float2\" 0.625 0.5"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[20]" 
-		" -type \"float2\" 0.625 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[21]" 
-		" -type \"float2\" 0.375 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[22]" 
-		" -type \"float2\" 0.625 0"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[23]" 
-		" -type \"float2\" 0.875 0"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[24]" 
-		" -type \"float2\" 0.875 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[25]" 
-		" -type \"float2\" 0.625 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[26]" 
-		" -type \"float2\" 0.125 0"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[27]" 
-		" -type \"float2\" 0.375 0"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[28]" 
-		" -type \"float2\" 0.375 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[29]" 
-		" -type \"float2\" 0.125 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[30]" 
-		" -type \"float2\" 0.625 0"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[31]" 
-		" -type \"float2\" 0.625 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[32]" 
-		" -type \"float2\" 0.625 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[33]" 
-		" -type \"float2\" 0.625 0"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[34]" 
-		" -type \"float2\" 0.375 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[35]" 
-		" -type \"float2\" 0.375 0"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[36]" 
-		" -type \"float2\" 0.375 0"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[37]" 
-		" -type \"float2\" 0.375 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[38]" 
-		" -type \"float2\" 0.625 0.5"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[39]" 
-		" -type \"float2\" 0.625 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[40]" 
-		" -type \"float2\" 0.625 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[41]" 
-		" -type \"float2\" 0.625 0.5"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[42]" 
-		" -type \"float2\" 0.375 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[43]" 
-		" -type \"float2\" 0.375 0.5"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[44]" 
-		" -type \"float2\" 0.375 0.5"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[45]" 
-		" -type \"float2\" 0.375 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[46]" 
-		" -type \"float2\" 0.625 0"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[47]" 
-		" -type \"float2\" 0.625 0"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[48]" 
-		" -type \"float2\" 0.625 0"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[49]" 
-		" -type \"float2\" 0.625 0"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[50]" 
-		" -type \"float2\" 0.375 0"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[51]" 
-		" -type \"float2\" 0.375 0"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[52]" 
-		" -type \"float2\" 0.375 0"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[53]" 
-		" -type \"float2\" 0.375 0"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[54]" 
-		" -type \"float2\" 0.625 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[55]" 
-		" -type \"float2\" 0.625 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[56]" 
-		" -type \"float2\" 0.625 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[57]" 
-		" -type \"float2\" 0.625 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[58]" 
-		" -type \"float2\" 0.375 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[59]" 
-		" -type \"float2\" 0.375 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[60]" 
-		" -type \"float2\" 0.375 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[61]" 
-		" -type \"float2\" 0.375 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[62]" 
-		" -type \"float2\" 0 0"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[63]" 
-		" -type \"float2\" 1 0"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[64]" 
-		" -type \"float2\" 1 1"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[65]" 
-		" -type \"float2\" 0 1"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[66]" 
-		" -type \"float2\" 0 0"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[67]" 
-		" -type \"float2\" 1 0"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[68]" 
-		" -type \"float2\" 1 1"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[69]" 
-		" -type \"float2\" 0 1"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[70]" 
-		" -type \"float2\" 0 0"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[71]" 
-		" -type \"float2\" 1 0"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[72]" 
-		" -type \"float2\" 1 1"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[73]" 
-		" -type \"float2\" 0 1"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[74]" 
-		" -type \"float2\" 0 0"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[75]" 
-		" -type \"float2\" 1 0"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[76]" 
-		" -type \"float2\" 1 1"
-		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvSet[0].uvSetPoints[77]" 
-		" -type \"float2\" 0 1"
+		2 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom" "uvst[0].uvsp[0:77]" 
+		" -s 78 -type \"float2\" 0.375 0 0.625 0 0.375 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0 0.875 0.25 0.125 0 0.125 0.25 0.375 0 0.625 0 0.625 0.25 0.375 0.25 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75 0.625 0 0.875 0 0.875 0.25 0.625 0.25 0.125 0 0.375 0 0.375 0.25 0.125 0.25 0.625 0 0.625 0.25 0.625 0.25 0.625 0 0.375 0.25 0.375 0 0.375 0 0.375 0.25 0.625 0.5 0.625 0.75 0.625 0.75 0.625 0.5 0.375 0.75 0.375 0.5 0.375 0.5 0.375 0.75 0.625 0 0.625 0 0.625 0 0.625 0 0.375 0 0.375 0 0.375 0 0.375 0 0.625 0.75 0.625 0.75 0.625 0.75 0.625 0.75 0.375 0.75 0.375 0.75 0.375 0.75 0.375 0.75 0 0 1 0 1 1 0 1 0 0 1 0 1 1 0 1 0 0 1 0 1 1 0 1 0 0 1 0 1 1 0 1"
+		
 		2 "|Couch:Sofa_Top" "translate" " -type \"double3\" 0 0 0"
 		2 "|Couch:Sofa_Top" "rotatePivot" " -type \"double3\" 0 2.37279152870178223 0"
 		
@@ -8385,244 +8096,12 @@ createNode reference -n "CouchRN";
 		" 1"
 		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetName" 
 		" -type \"string\" \"map1\""
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints" 
-		" -s 118"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[0]" 
-		" -type \"float2\" 0.37823140999999999 0.99606251999999995"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[1]" 
-		" -type \"float2\" 0.37823140999999999 0.024997536000000001"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[2]" 
-		" -type \"float2\" 0.62176858999999995 0.99606251999999995"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[3]" 
-		" -type \"float2\" 0.62893748000000005 0.024997526999999999"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[4]" 
-		" -type \"float2\" 0.37823140999999999 0.22500253000000001"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[5]" 
-		" -type \"float2\" 0.62176852999999999 0.22500253000000001"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[6]" 
-		" -type \"float2\" 0.62893748000000005 0.22500253000000001"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[7]" 
-		" -type \"float2\" 0.12893750000000001 0.024997546999999998"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[8]" 
-		" -type \"float2\" 0.37823140999999999 0.49606252000000001"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[9]" 
-		" -type \"float2\" 0.62176858999999995 0.49606252000000001"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[10]" 
-		" -type \"float2\" 0.87106251999999995 0.22500253000000001"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[11]" 
-		" -type \"float2\" 0.87106251999999995 0.024997517"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[12]" 
-		" -type \"float2\" 0.62176858999999995 0.75393748000000005"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[13]" 
-		" -type \"float2\" 0.37823140999999999 0.72500246999999995"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[14]" 
-		" -type \"float2\" 0.62176858999999995 0.72500246999999995"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[15]" 
-		" -type \"float2\" 0.62176858999999995 0.024997531999999999"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[16]" 
-		" -type \"float2\" 0.37823140999999999 0.25393750999999998"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[17]" 
-		" -type \"float2\" 0.62176858999999995 0.25393750999999998"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[18]" 
-		" -type \"float2\" 0.37823140999999999 0.52499746999999997"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[19]" 
-		" -type \"float2\" 0.62176858999999995 0.52499746999999997"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[20]" 
-		" -type \"float2\" 0.37823140999999999 0.75393748000000005"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[21]" 
-		" -type \"float2\" 0.37106252000000001 0.024997517"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[22]" 
-		" -type \"float2\" 0.37106252000000001 0.22500253000000001"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[23]" 
-		" -type \"float2\" 0.12893750000000001 0.22500253000000001"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[24]" 
-		" -type \"float2\" 0.45695511 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[25]" 
-		" -type \"float2\" 0.37086532 0"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[26]" 
-		" -type \"float2\" 0.40373003000000002 0.91675543999999998"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[27]" 
-		" -type \"float2\" 0.38251921999999999 0"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[28]" 
-		" -type \"float2\" 0.46083974999999999 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[29]" 
-		" -type \"float2\" 0.38025548999999997 0.073454820000000004"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[30]" 
-		" -type \"float2\" 0.37609226000000001 0.026001612"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[31]" 
-		" -type \"float2\" 0.37369250999999998 0.025488848000000001"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[32]" 
-		" -type \"float2\" 0.59553528 0.91455734"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[33]" 
-		" -type \"float2\" 0.62913470999999999 0"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[34]" 
-		" -type \"float2\" 0.54304492000000004 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[35]" 
-		" -type \"float2\" 0.62630743 0.024945067000000001"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[36]" 
-		" -type \"float2\" 0.62390780000000001 0.024958396000000001"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[37]" 
-		" -type \"float2\" 0.61974435999999999 0.0096013416000000004"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[38]" 
-		" -type \"float2\" 0.53916025000000001 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[39]" 
-		" -type \"float2\" 0.61748080999999999 0"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[40]" 
-		" -type \"float2\" 0.37732172000000003 0.25336873999999998"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[41]" 
-		" -type \"float2\" 0.37277016000000002 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[42]" 
-		" -type \"float2\" 0.375 0.25222983999999998"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[43]" 
-		" -type \"float2\" 0.37369915999999997 0.22505388000000001"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[44]" 
-		" -type \"float2\" 0.37609637000000001 0.22503959000000001"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[45]" 
-		" -type \"float2\" 0.37831131000000001 0.24027596000000001"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[46]" 
-		" -type \"float2\" 0.37831977 0.24987123999999999"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[47]" 
-		" -type \"float2\" 0.625 0.25222983999999998"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[48]" 
-		" -type \"float2\" 0.62722986999999997 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[49]" 
-		" -type \"float2\" 0.62268089999999998 0.25337586000000001"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[50]" 
-		" -type \"float2\" 0.62167698000000005 0.24986285"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[51]" 
-		" -type \"float2\" 0.62168579999999996 0.24026987999999999"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[52]" 
-		" -type \"float2\" 0.62390363000000004 0.22503898999999999"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[53]" 
-		" -type \"float2\" 0.62630074999999996 0.22505422"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[54]" 
-		" -type \"float2\" 0.37670844999999997 0.51896173000000001"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[55]" 
-		" -type \"float2\" 0.125 0.23780607000000001"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[56]" 
-		" -type \"float2\" 0.375 0.51219391999999997"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[57]" 
-		" -type \"float2\" 0.375 0.49777012999999998"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[58]" 
-		" -type \"float2\" 0.12722985000000001 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[59]" 
-		" -type \"float2\" 0.37731910000000002 0.49662402"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[60]" 
-		" -type \"float2\" 0.37832373000000002 0.50013030000000003"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[61]" 
-		" -type \"float2\" 0.37831658000000001 0.50970614000000003"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[62]" 
-		" -type \"float2\" 0.625 0.51219391999999997"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[63]" 
-		" -type \"float2\" 0.875 0.23780607000000001"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[64]" 
-		" -type \"float2\" 0.62329155000000003 0.51896173000000001"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[65]" 
-		" -type \"float2\" 0.62168610000000002 0.50969874999999998"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[66]" 
-		" -type \"float2\" 0.62167947999999995 0.50012153000000004"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[67]" 
-		" -type \"float2\" 0.62267828000000003 0.49663115000000002"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[68]" 
-		" -type \"float2\" 0.87277013000000003 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[69]" 
-		" -type \"float2\" 0.625 0.49777012999999998"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[70]" 
-		" -type \"float2\" 0.37754696999999998 0.75268787000000004"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[71]" 
-		" -type \"float2\" 0.12721268999999999 0"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[72]" 
-		" -type \"float2\" 0.37573754999999998 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[73]" 
-		" -type \"float2\" 0.375 0.73780601999999995"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[74]" 
-		" -type \"float2\" 0.125 0.012193996"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[75]" 
-		" -type \"float2\" 0.37670844999999997 0.73103821000000002"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[76]" 
-		" -type \"float2\" 0.37832144000000001 0.74027823999999998"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[77]" 
-		" -type \"float2\" 0.37832946000000001 0.74985135000000003"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[78]" 
-		" -type \"float2\" 0.62426245000000002 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[79]" 
-		" -type \"float2\" 0.87278730000000004 0"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[80]" 
-		" -type \"float2\" 0.62246018999999997 0.75270873000000005"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[81]" 
-		" -type \"float2\" 0.62166136999999999 0.74982464000000004"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[82]" 
-		" -type \"float2\" 0.62167077999999998 0.74025565000000004"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[83]" 
-		" -type \"float2\" 0.62329155000000003 0.73103815000000005"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[84]" 
-		" -type \"float2\" 0.875 0.012193996"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[85]" 
-		" -type \"float2\" 0.625 0.73780601999999995"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[86]" 
-		" -type \"float2\" 0.37307799000000003 0"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[87]" 
-		" -type \"float2\" 0.45769264999999998 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[88]" 
-		" -type \"float2\" 0.38046288 0"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[89]" 
-		" -type \"float2\" 0.46015429000000002 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[90]" 
-		" -type \"float2\" 0.37626820999999999 0.40177372"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[91]" 
-		" -type \"float2\" 0.61953712000000005 0"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[92]" 
-		" -type \"float2\" 0.53984571000000003 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[93]" 
-		" -type \"float2\" 0.62692201000000003 0"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[94]" 
-		" -type \"float2\" 0.54230732000000004 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[95]" 
-		" -type \"float2\" 0.62373102000000002 0.0058537846999999997"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[96]" 
-		" -type \"float2\" 0.37760719999999998 0.25021198"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[97]" 
-		" -type \"float2\" 0.375 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[98]" 
-		" -type \"float2\" 0.3768338 0.24326141000000001"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[99]" 
-		" -type \"float2\" 0.625 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[100]" 
-		" -type \"float2\" 0.62235342999999999 0.25010483999999999"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[101]" 
-		" -type \"float2\" 0.62316506999999999 0.24326714999999999"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[102]" 
-		" -type \"float2\" 0.37684798000000003 0.50660479000000003"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[103]" 
-		" -type \"float2\" 0.375 0.5"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[104]" 
-		" -type \"float2\" 0.125 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[105]" 
-		" -type \"float2\" 0.3776468 0.49989264999999999"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[106]" 
-		" -type \"float2\" 0.625 0.5"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[107]" 
-		" -type \"float2\" 0.875 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[108]" 
-		" -type \"float2\" 0.62315242999999998 0.50660324000000001"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[109]" 
-		" -type \"float2\" 0.62239259000000002 0.4997856"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[110]" 
-		" -type \"float2\" 0.37771684 0.74988352999999996"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[111]" 
-		" -type \"float2\" 0.375 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[112]" 
-		" -type \"float2\" 0.125 0"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[113]" 
-		" -type \"float2\" 0.37684910999999999 0.74339211000000005"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[114]" 
-		" -type \"float2\" 0.625 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[115]" 
-		" -type \"float2\" 0.875 0"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[116]" 
-		" -type \"float2\" 0.62217109999999998 0.74955678000000003"
-		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvSet[0].uvSetPoints[117]" 
-		" -type \"float2\" 0.62314950999999996 0.74338758000000005"
+		2 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3" "uvst[0].uvsp[0:117]" 
+		(" -s 118 -type \"float2\" 0.37823140999999999 0.99606251999999995 0.37823140999999999 0.024997536000000001 0.62176858999999995 0.99606251999999995 0.62893748000000005 0.024997526999999999 0.37823140999999999 0.22500253000000001 0.62176852999999999 0.22500253000000001 0.62893748000000005 0.22500253000000001 0.12893750000000001 0.024997546999999998 0.37823140999999999 0.49606252000000001 0.62176858999999995 0.49606252000000001 0.87106251999999995 0.22500253000000001 0.87106251999999995 0.024997517 0.62176858999999995 0.75393748000000005 0.37823140999999999 0.72500246999999995 0.62176858999999995 0.72500246999999995 0.62176858999999995 0.024997531999999999 0.37823140999999999 0.25393750999999998 0.62176858999999995 0.25393750999999998 0.37823140999999999 0.52499746999999997 0.62176858999999995 0.52499746999999997 0.37823140999999999 0.75393748000000005 0.37106252000000001 0.024997517 0.37106252000000001 0.22500253000000001 0.12893750000000001 0.22500253000000001 0.45695511 0.75 0.37086532 0 0.40373003000000002 0.91"
+		+ "675543999999998 0.38251921999999999 0 0.46083974999999999 0.75 0.38025548999999997 0.073454820000000004 0.37609226000000001 0.026001612 0.37369250999999998 0.025488848000000001 0.59553528 0.91455734 0.62913470999999999 0 0.54304492000000004 0.75 0.62630743 0.024945067000000001 0.62390780000000001 0.024958396000000001 0.61974435999999999 0.0096013416000000004 0.53916025000000001 0.75 0.61748080999999999 0 0.37732172000000003 0.25336873999999998 0.37277016000000002 0.25 0.375 0.25222983999999998 0.37369915999999997 0.22505388000000001 0.37609637000000001 0.22503959000000001 0.37831131000000001 0.24027596000000001 0.37831977 0.24987123999999999 0.625 0.25222983999999998 0.62722986999999997 0.25 0.62268089999999998 0.25337586000000001 0.62167698000000005 0.24986285 0.62168579999999996 0.24026987999999999 0.62390363000000004 0.22503898999999999 0.62630074999999996 0.22505422 0.37670844999999997 0.51896173000000001 0.125 0.23780607000000001 0.375 0.51219391999999997 0.375 0.49777012999999998 0.12722985000000001 0.2"
+		+ "5 0.37731910000000002 0.49662402 0.37832373000000002 0.50013030000000003 0.37831658000000001 0.50970614000000003 0.625 0.51219391999999997 0.875 0.23780607000000001 0.62329155000000003 0.51896173000000001 0.62168610000000002 0.50969874999999998 0.62167947999999995 0.50012153000000004 0.62267828000000003 0.49663115000000002 0.87277013000000003 0.25 0.625 0.49777012999999998 0.37754696999999998 0.75268787000000004 0.12721268999999999 0 0.37573754999999998 0.75 0.375 0.73780601999999995 0.125 0.012193996 0.37670844999999997 0.73103821000000002 0.37832144000000001 0.74027823999999998 0.37832946000000001 0.74985135000000003 0.62426245000000002 0.75 0.87278730000000004 0 0.62246018999999997 0.75270873000000005 0.62166136999999999 0.74982464000000004 0.62167077999999998 0.74025565000000004 0.62329155000000003 0.73103815000000005 0.875 0.012193996 0.625 0.73780601999999995 0.37307799000000003 0 0.45769264999999998 0.75 0.38046288 0 0.46015429000000002 0.75 0.37626820999999999 0.40177372 0.61953712000000005 0 0.539845"
+		+ "71000000003 0.75 0.62692201000000003 0 0.54230732000000004 0.75 0.62373102000000002 0.0058537846999999997 0.37760719999999998 0.25021198 0.375 0.25 0.3768338 0.24326141000000001 0.625 0.25 0.62235342999999999 0.25010483999999999 0.62316506999999999 0.24326714999999999 0.37684798000000003 0.50660479000000003 0.375 0.5 0.125 0.25 0.3776468 0.49989264999999999 0.625 0.5 0.875 0.25 0.62315242999999998 0.50660324000000001 0.62239259000000002 0.4997856 0.37771684 0.74988352999999996 0.375 0.75 0.125 0 0.37684910999999999 0.74339211000000005 0.625 0.75 0.875 0 0.62217109999999998 0.74955678000000003 0.62314950999999996 0.74338758000000005"
+		)
 		2 "|Couch:pCube4" "translate" " -type \"double3\" 3.01430183591025003 2.29043340682983487 0.97189697995214841"
 		
 		2 "|CouchRNfosterParent1|Couch:transform3|Couch:pCubeShape4" "intermediateObject" 
@@ -8649,404 +8128,12 @@ createNode reference -n "CouchRN";
 		" 1"
 		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetName" 
 		" -type \"string\" \"map1\""
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints" 
-		" -s 198"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[0]" 
-		" -type \"float2\" 0 0"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[1]" 
-		" -type \"float2\" 1 0"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[2]" 
-		" -type \"float2\" 1 1"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[3]" 
-		" -type \"float2\" 0 1"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[4]" 
-		" -type \"float2\" 0.5 0"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[5]" 
-		" -type \"float2\" 0.5 1"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[6]" 
-		" -type \"float2\" 0.5 0.5"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[7]" 
-		" -type \"float2\" 0 0.5"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[8]" 
-		" -type \"float2\" 0.2 0"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[9]" 
-		" -type \"float2\" 0.2 0.5"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[10]" 
-		" -type \"float2\" 0.2 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[11]" 
-		" -type \"float2\" 0 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[12]" 
-		" -type \"float2\" 0.2 0.125"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[13]" 
-		" -type \"float2\" 0 0.125"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[14]" 
-		" -type \"float2\" 0.1 0"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[15]" 
-		" -type \"float2\" 0.1 0.125"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[16]" 
-		" -type \"float2\" 0.1 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[17]" 
-		" -type \"float2\" 0.2 0.375"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[18]" 
-		" -type \"float2\" 0 0.375"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[19]" 
-		" -type \"float2\" 0.1 0.375"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[20]" 
-		" -type \"float2\" 0.1 0.5"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[21]" 
-		" -type \"float2\" 0.5 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[22]" 
-		" -type \"float2\" 0.30000000999999998 0"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[23]" 
-		" -type \"float2\" 0.30000000999999998 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[24]" 
-		" -type \"float2\" 0.30000000999999998 0.125"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[25]" 
-		" -type \"float2\" 0.5 0.125"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[26]" 
-		" -type \"float2\" 0.40000001000000002 0"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[27]" 
-		" -type \"float2\" 0.40000001000000002 0.125"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[28]" 
-		" -type \"float2\" 0.40000001000000002 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[29]" 
-		" -type \"float2\" 0.30000000999999998 0.5"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[30]" 
-		" -type \"float2\" 0.30000000999999998 0.375"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[31]" 
-		" -type \"float2\" 0.5 0.375"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[32]" 
-		" -type \"float2\" 0.40000001000000002 0.375"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[33]" 
-		" -type \"float2\" 0.40000001000000002 0.5"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[34]" 
-		" -type \"float2\" 0.2 1"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[35]" 
-		" -type \"float2\" 0 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[36]" 
-		" -type \"float2\" 0.2 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[37]" 
-		" -type \"float2\" 0 0.625"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[38]" 
-		" -type \"float2\" 0.2 0.625"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[39]" 
-		" -type \"float2\" 0.1 0.625"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[40]" 
-		" -type \"float2\" 0.1 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[41]" 
-		" -type \"float2\" 0 0.875"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[42]" 
-		" -type \"float2\" 0.2 0.875"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[43]" 
-		" -type \"float2\" 0.1 0.875"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[44]" 
-		" -type \"float2\" 0.1 1"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[45]" 
-		" -type \"float2\" 0.5 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[46]" 
-		" -type \"float2\" 0.30000000999999998 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[47]" 
-		" -type \"float2\" 0.30000000999999998 0.625"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[48]" 
-		" -type \"float2\" 0.5 0.625"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[49]" 
-		" -type \"float2\" 0.40000001000000002 0.625"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[50]" 
-		" -type \"float2\" 0.40000001000000002 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[51]" 
-		" -type \"float2\" 0.30000000999999998 1"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[52]" 
-		" -type \"float2\" 0.30000000999999998 0.875"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[53]" 
-		" -type \"float2\" 0.5 0.875"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[54]" 
-		" -type \"float2\" 0.40000001000000002 0.875"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[55]" 
-		" -type \"float2\" 0.40000001000000002 1"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[56]" 
-		" -type \"float2\" 1 0.5"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[57]" 
-		" -type \"float2\" 0.69999999000000002 0"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[58]" 
-		" -type \"float2\" 0.69999999000000002 0.5"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[59]" 
-		" -type \"float2\" 0.69999999000000002 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[60]" 
-		" -type \"float2\" 0.69999999000000002 0.125"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[61]" 
-		" -type \"float2\" 0.60000001999999997 0"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[62]" 
-		" -type \"float2\" 0.60000001999999997 0.125"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[63]" 
-		" -type \"float2\" 0.60000001999999997 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[64]" 
-		" -type \"float2\" 0.69999999000000002 0.375"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[65]" 
-		" -type \"float2\" 0.60000001999999997 0.375"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[66]" 
-		" -type \"float2\" 0.60000001999999997 0.5"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[67]" 
-		" -type \"float2\" 1 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[68]" 
-		" -type \"float2\" 0.80000000999999998 0"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[69]" 
-		" -type \"float2\" 0.80000000999999998 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[70]" 
-		" -type \"float2\" 0.80000000999999998 0.125"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[71]" 
-		" -type \"float2\" 1 0.125"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[72]" 
-		" -type \"float2\" 0.89999998000000003 0"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[73]" 
-		" -type \"float2\" 0.89999998000000003 0.125"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[74]" 
-		" -type \"float2\" 0.89999998000000003 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[75]" 
-		" -type \"float2\" 0.80000000999999998 0.5"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[76]" 
-		" -type \"float2\" 0.80000000999999998 0.375"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[77]" 
-		" -type \"float2\" 1 0.375"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[78]" 
-		" -type \"float2\" 0.89999998000000003 0.375"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[79]" 
-		" -type \"float2\" 0.89999998000000003 0.5"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[80]" 
-		" -type \"float2\" 0.69999999000000002 1"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[81]" 
-		" -type \"float2\" 0.69999999000000002 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[82]" 
-		" -type \"float2\" 0.69999999000000002 0.625"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[83]" 
-		" -type \"float2\" 0.60000001999999997 0.625"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[84]" 
-		" -type \"float2\" 0.60000001999999997 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[85]" 
-		" -type \"float2\" 0.69999999000000002 0.875"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[86]" 
-		" -type \"float2\" 0.60000001999999997 0.875"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[87]" 
-		" -type \"float2\" 0.60000001999999997 1"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[88]" 
-		" -type \"float2\" 1 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[89]" 
-		" -type \"float2\" 0.80000000999999998 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[90]" 
-		" -type \"float2\" 0.80000000999999998 0.625"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[91]" 
-		" -type \"float2\" 1 0.625"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[92]" 
-		" -type \"float2\" 0.89999998000000003 0.625"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[93]" 
-		" -type \"float2\" 0.89999998000000003 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[94]" 
-		" -type \"float2\" 0.80000000999999998 1"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[95]" 
-		" -type \"float2\" 0.80000000999999998 0.875"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[96]" 
-		" -type \"float2\" 1 0.875"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[97]" 
-		" -type \"float2\" 0.89999998000000003 0.875"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[98]" 
-		" -type \"float2\" 0.89999998000000003 1"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[99]" 
-		" -type \"float2\" 1 0.875"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[100]" 
-		" -type \"float2\" 1 1"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[101]" 
-		" -type \"float2\" 0.89999998000000003 1"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[102]" 
-		" -type \"float2\" 0.89999998000000003 0.875"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[103]" 
-		" -type \"float2\" 0.5 0.875"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[104]" 
-		" -type \"float2\" 0.5 1"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[105]" 
-		" -type \"float2\" 0.40000001000000002 1"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[106]" 
-		" -type \"float2\" 0.40000001000000002 0.875"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[107]" 
-		" -type \"float2\" 0.5 0.375"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[108]" 
-		" -type \"float2\" 0.5 0.5"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[109]" 
-		" -type \"float2\" 0.40000001000000002 0.5"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[110]" 
-		" -type \"float2\" 0.40000001000000002 0.375"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[111]" 
-		" -type \"float2\" 0.2 0.375"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[112]" 
-		" -type \"float2\" 0.2 0.5"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[113]" 
-		" -type \"float2\" 0.1 0.5"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[114]" 
-		" -type \"float2\" 0.1 0.375"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[115]" 
-		" -type \"float2\" 0.2 0.125"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[116]" 
-		" -type \"float2\" 0.2 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[117]" 
-		" -type \"float2\" 0.1 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[118]" 
-		" -type \"float2\" 0.1 0.125"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[119]" 
-		" -type \"float2\" 0.1 0"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[120]" 
-		" -type \"float2\" 0.2 0"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[121]" 
-		" -type \"float2\" 0 0"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[122]" 
-		" -type \"float2\" 0 0.125"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[123]" 
-		" -type \"float2\" 0 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[124]" 
-		" -type \"float2\" 0 0.375"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[125]" 
-		" -type \"float2\" 0 0.5"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[126]" 
-		" -type \"float2\" 0.5 0.125"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[127]" 
-		" -type \"float2\" 0.5 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[128]" 
-		" -type \"float2\" 0.40000001000000002 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[129]" 
-		" -type \"float2\" 0.40000001000000002 0.125"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[130]" 
-		" -type \"float2\" 0.30000000999999998 0.125"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[131]" 
-		" -type \"float2\" 0.30000000999999998 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[132]" 
-		" -type \"float2\" 0.30000000999999998 0"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[133]" 
-		" -type \"float2\" 0.40000001000000002 0"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[134]" 
-		" -type \"float2\" 0.5 0"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[135]" 
-		" -type \"float2\" 0.30000000999999998 0.5"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[136]" 
-		" -type \"float2\" 0.30000000999999998 0.375"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[137]" 
-		" -type \"float2\" 0.2 1"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[138]" 
-		" -type \"float2\" 0.1 1"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[139]" 
-		" -type \"float2\" 0.1 0.875"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[140]" 
-		" -type \"float2\" 0.2 0.875"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[141]" 
-		" -type \"float2\" 0.1 0.625"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[142]" 
-		" -type \"float2\" 0.2 0.625"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[143]" 
-		" -type \"float2\" 0.2 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[144]" 
-		" -type \"float2\" 0.1 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[145]" 
-		" -type \"float2\" 0 0.625"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[146]" 
-		" -type \"float2\" 0 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[147]" 
-		" -type \"float2\" 0 0.875"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[148]" 
-		" -type \"float2\" 0 1"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[149]" 
-		" -type \"float2\" 0.5 0.625"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[150]" 
-		" -type \"float2\" 0.5 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[151]" 
-		" -type \"float2\" 0.40000001000000002 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[152]" 
-		" -type \"float2\" 0.40000001000000002 0.625"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[153]" 
-		" -type \"float2\" 0.30000000999999998 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[154]" 
-		" -type \"float2\" 0.30000000999999998 0.625"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[155]" 
-		" -type \"float2\" 0.30000000999999998 1"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[156]" 
-		" -type \"float2\" 0.30000000999999998 0.875"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[157]" 
-		" -type \"float2\" 1 0.375"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[158]" 
-		" -type \"float2\" 1 0.5"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[159]" 
-		" -type \"float2\" 0.89999998000000003 0.5"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[160]" 
-		" -type \"float2\" 0.89999998000000003 0.375"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[161]" 
-		" -type \"float2\" 0.69999999000000002 0.375"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[162]" 
-		" -type \"float2\" 0.69999999000000002 0.5"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[163]" 
-		" -type \"float2\" 0.60000001999999997 0.5"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[164]" 
-		" -type \"float2\" 0.60000001999999997 0.375"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[165]" 
-		" -type \"float2\" 0.69999999000000002 0.125"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[166]" 
-		" -type \"float2\" 0.69999999000000002 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[167]" 
-		" -type \"float2\" 0.60000001999999997 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[168]" 
-		" -type \"float2\" 0.60000001999999997 0.125"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[169]" 
-		" -type \"float2\" 0.60000001999999997 0"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[170]" 
-		" -type \"float2\" 0.69999999000000002 0"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[171]" 
-		" -type \"float2\" 1 0.125"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[172]" 
-		" -type \"float2\" 1 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[173]" 
-		" -type \"float2\" 0.89999998000000003 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[174]" 
-		" -type \"float2\" 0.89999998000000003 0.125"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[175]" 
-		" -type \"float2\" 0.80000000999999998 0.125"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[176]" 
-		" -type \"float2\" 0.80000000999999998 0.25"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[177]" 
-		" -type \"float2\" 0.80000000999999998 0"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[178]" 
-		" -type \"float2\" 0.89999998000000003 0"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[179]" 
-		" -type \"float2\" 1 0"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[180]" 
-		" -type \"float2\" 0.80000000999999998 0.5"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[181]" 
-		" -type \"float2\" 0.80000000999999998 0.375"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[182]" 
-		" -type \"float2\" 0.69999999000000002 1"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[183]" 
-		" -type \"float2\" 0.60000001999999997 1"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[184]" 
-		" -type \"float2\" 0.60000001999999997 0.875"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[185]" 
-		" -type \"float2\" 0.69999999000000002 0.875"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[186]" 
-		" -type \"float2\" 0.60000001999999997 0.625"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[187]" 
-		" -type \"float2\" 0.69999999000000002 0.625"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[188]" 
-		" -type \"float2\" 0.69999999000000002 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[189]" 
-		" -type \"float2\" 0.60000001999999997 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[190]" 
-		" -type \"float2\" 1 0.625"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[191]" 
-		" -type \"float2\" 1 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[192]" 
-		" -type \"float2\" 0.89999998000000003 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[193]" 
-		" -type \"float2\" 0.89999998000000003 0.625"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[194]" 
-		" -type \"float2\" 0.80000000999999998 0.75"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[195]" 
-		" -type \"float2\" 0.80000000999999998 0.625"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[196]" 
-		" -type \"float2\" 0.80000000999999998 1"
-		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvSet[0].uvSetPoints[197]" 
-		" -type \"float2\" 0.80000000999999998 0.875"
+		2 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape" "uvst[0].uvsp[0:197]" 
+		(" -s 198 -type \"float2\" 0 0 1 0 1 1 0 1 0.5 0 0.5 1 0.5 0.5 0 0.5 0.2 0 0.2 0.5 0.2 0.25 0 0.25 0.2 0.125 0 0.125 0.1 0 0.1 0.125 0.1 0.25 0.2 0.375 0 0.375 0.1 0.375 0.1 0.5 0.5 0.25 0.30000000999999998 0 0.30000000999999998 0.25 0.30000000999999998 0.125 0.5 0.125 0.40000001000000002 0 0.40000001000000002 0.125 0.40000001000000002 0.25 0.30000000999999998 0.5 0.30000000999999998 0.375 0.5 0.375 0.40000001000000002 0.375 0.40000001000000002 0.5 0.2 1 0 0.75 0.2 0.75 0 0.625 0.2 0.625 0.1 0.625 0.1 0.75 0 0.875 0.2 0.875 0.1 0.875 0.1 1 0.5 0.75 0.30000000999999998 0.75 0.30000000999999998 0.625 0.5 0.625 0.40000001000000002 0.625 0.40000001000000002 0.75 0.30000000999999998 1 0.30000000999999998 0.875 0.5 0.875 0.40000001000000002 0.875 0.40000001000000002 1 1 0.5 0.69999999000000002 0 0.69999999000000002 0.5 0.69999999000000002 0.25 0.69999999000000002 0.125 0.60000001999999997 0 0.60000001999999997 0.125 0.60000001999999997 0.25 0.69999999000000002 0.375 0.60000001999999997 0.375 0.60000001999999997 0.5 1 0"
+		+ ".25 0.80000000999999998 0 0.80000000999999998 0.25 0.80000000999999998 0.125 1 0.125 0.89999998000000003 0 0.89999998000000003 0.125 0.89999998000000003 0.25 0.80000000999999998 0.5 0.80000000999999998 0.375 1 0.375 0.89999998000000003 0.375 0.89999998000000003 0.5 0.69999999000000002 1 0.69999999000000002 0.75 0.69999999000000002 0.625 0.60000001999999997 0.625 0.60000001999999997 0.75 0.69999999000000002 0.875 0.60000001999999997 0.875 0.60000001999999997 1 1 0.75 0.80000000999999998 0.75 0.80000000999999998 0.625 1 0.625 0.89999998000000003 0.625 0.89999998000000003 0.75 0.80000000999999998 1 0.80000000999999998 0.875 1 0.875 0.89999998000000003 0.875 0.89999998000000003 1 1 0.875 1 1 0.89999998000000003 1 0.89999998000000003 0.875 0.5 0.875 0.5 1 0.40000001000000002 1 0.40000001000000002 0.875 0.5 0.375 0.5 0.5 0.40000001000000002 0.5 0.40000001000000002 0.375 0.2 0.375 0.2 0.5 0.1 0.5 0.1 0.375 0.2 0.125 0.2 0.25 0.1 0.25 0.1 0.125 0.1 0 0.2 0 0 0 0 0.125 0 0.25 0 0.375 0 0.5 0.5 0.125 0.5 0.25 0.4000000"
+		+ "1000000002 0.25 0.40000001000000002 0.125 0.30000000999999998 0.125 0.30000000999999998 0.25 0.30000000999999998 0 0.40000001000000002 0 0.5 0 0.30000000999999998 0.5 0.30000000999999998 0.375 0.2 1 0.1 1 0.1 0.875 0.2 0.875 0.1 0.625 0.2 0.625 0.2 0.75 0.1 0.75 0 0.625 0 0.75 0 0.875 0 1 0.5 0.625 0.5 0.75 0.40000001000000002 0.75 0.40000001000000002 0.625 0.30000000999999998 0.75 0.30000000999999998 0.625 0.30000000999999998 1 0.30000000999999998 0.875 1 0.375 1 0.5 0.89999998000000003 0.5 0.89999998000000003 0.375 0.69999999000000002 0.375 0.69999999000000002 0.5 0.60000001999999997 0.5 0.60000001999999997 0.375 0.69999999000000002 0.125 0.69999999000000002 0.25 0.60000001999999997 0.25 0.60000001999999997 0.125 0.60000001999999997 0 0.69999999000000002 0 1 0.125 1 0.25 0.89999998000000003 0.25 0.89999998000000003 0.125 0.80000000999999998 0.125 0.80000000999999998 0.25 0.80000000999999998 0 0.89999998000000003 0 1 0 0.80000000999999998 0.5 0.80000000999999998 0.375 0.69999999000000002 1 0.6000000199999999"
+		+ "7 1 0.60000001999999997 0.875 0.69999999000000002 0.875 0.60000001999999997 0.625 0.69999999000000002 0.625 0.69999999000000002 0.75 0.60000001999999997 0.75 1 0.625 1 0.75 0.89999998000000003 0.75 0.89999998000000003 0.625 0.80000000999999998 0.75 0.80000000999999998 0.625 0.80000000999999998 1 0.80000000999999998 0.875"
+		)
 		2 "|Couch:Pillow1" "translate" " -type \"double3\" -5.24788758920080944 2.61693005669108514 -10.39436073359771129"
 		
 		2 "|Couch:Pillow1" "rotatePivot" " -type \"double3\" -0.0089324712753295898 0 10.99903409438417867"
@@ -9067,13 +8154,200 @@ createNode reference -n "CouchRN";
 		+ "1000000002 0.25 0.40000001000000002 0.125 0.30000000999999998 0.125 0.30000000999999998 0.25 0.30000000999999998 0 0.40000001000000002 0 0.5 0 0.30000000999999998 0.5 0.30000000999999998 0.375 0.2 1 0.1 1 0.1 0.875 0.2 0.875 0.1 0.625 0.2 0.625 0.2 0.75 0.1 0.75 0 0.625 0 0.75 0 0.875 0 1 0.5 0.625 0.5 0.75 0.40000001000000002 0.75 0.40000001000000002 0.625 0.30000000999999998 0.75 0.30000000999999998 0.625 0.30000000999999998 1 0.30000000999999998 0.875 1 0.375 1 0.5 0.89999998000000003 0.5 0.89999998000000003 0.375 0.69999999000000002 0.375 0.69999999000000002 0.5 0.60000001999999997 0.5 0.60000001999999997 0.375 0.69999999000000002 0.125 0.69999999000000002 0.25 0.60000001999999997 0.25 0.60000001999999997 0.125 0.60000001999999997 0 0.69999999000000002 0 1 0.125 1 0.25 0.89999998000000003 0.25 0.89999998000000003 0.125 0.80000000999999998 0.125 0.80000000999999998 0.25 0.80000000999999998 0 0.89999998000000003 0 1 0 0.80000000999999998 0.5 0.80000000999999998 0.375 0.69999999000000002 1 0.6000000199999999"
 		+ "7 1 0.60000001999999997 0.875 0.69999999000000002 0.875 0.60000001999999997 0.625 0.69999999000000002 0.625 0.69999999000000002 0.75 0.60000001999999997 0.75 1 0.625 1 0.75 0.89999998000000003 0.75 0.89999998000000003 0.625 0.80000000999999998 0.75 0.80000000999999998 0.625 0.80000000999999998 1 0.80000000999999998 0.875"
 		)
+		2 "Couch:polyExtrudeFace1" "manipMatrix" " -type \"matrix\" 12.66622001585921176 0 0 0 0 0.52742152008460019 0 0 0 0 5.6914966565722116 0 0 1 0 1"
+		
+		2 "Couch:polyExtrudeFace2" "manipMatrix" " -type \"matrix\" 12.66622001585921176 0 0 0 0 0.52742152008460019 0 0 0 0 5.6914966565722116 0 0 1 0 1"
+		
+		2 "Couch:polyExtrudeFace3" "manipMatrix" " -type \"matrix\" 12.66622001585921176 0 0 0 0 0.52742152008460019 0 0 0 0 5.6914966565722116 0 0 1 0 1"
+		
+		2 "Couch:polyExtrudeFace4" "manipMatrix" " -type \"matrix\" 12.66622001585921176 0 0 0 0 0.52742152008460019 0 0 0 0 5.6914966565722116 0 0 1 0 1"
+		
+		2 "Couch:polyExtrudeFace5" "manipMatrix" " -type \"matrix\" 12.66622001585921176 0 0 0 0 0.52742152008460019 0 0 0 0 5.6914966565722116 0 0 1 0 1"
+		
 		2 "Couch:groupParts1" "groupId" " 117"
 		2 "Couch:groupParts2" "groupId" " 119"
+		2 "Couch:polyMergeVert1" "manipMatrix" " -type \"matrix\" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"
+		
+		2 "Couch:polyExtrudeEdge1" "manipMatrix" " -type \"matrix\" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"
+		
+		2 "Couch:polyMergeVert2" "manipMatrix" " -type \"matrix\" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"
+		
+		2 "Couch:polyBevel1" "manipMatrix" " -type \"matrix\" 5.11018451062613188 0 0 0 0 0.79167524676137324 0 0 0 0 4.06555786066528402 0 -3.1121407987197216 2.29043340682983487 0.97189697995214841 1"
+		
 		2 "Couch:groupParts4" "groupId" " 129"
+		2 "Couch:polyMergeVert3" "manipMatrix" " -type \"matrix\" 0.32784362723191601 0.005938663867665451 -0.32205737749896357 0 0.29243478167599735 0.18717400224960148 0.30114026199530425 0 0.13504858605759179 -0.41972406554777819 0.12973532383476813 0 -6.3862615170819268 7.58100735124228642 -1.87572363040135581 1"
+		
+		3 "Couch:groupId13.message" ":initialShadingGroup.groupNodes" "-na"
+		3 "Couch:polyCube3.output" "Couch:polyTweak1.inputPolymesh" ""
+		3 "Couch:groupId19.message" ":initialShadingGroup.groupNodes" "-na"
+		3 "Couch:groupId14.message" ":initialShadingGroup.groupNodes" "-na"
+		3 "Couch:groupId1.message" ":initialShadingGroup.groupNodes" "-na"
+		3 "Couch:groupId3.message" ":initialShadingGroup.groupNodes" "-na"
+		3 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape.worldMatrix" 
+		"Couch:polyBoolean1.inputMat[0]" ""
+		3 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape.outMesh" 
+		"Couch:polyBoolean1.inputPoly[0]" ""
+		3 "|Couch:pCube2|Couch:pCubeShape2.outMesh" "Couch:polyBoolean1.inputPoly[1]" 
+		""
+		3 "|Couch:pCube2|Couch:pCubeShape2.worldMatrix" "Couch:polyBoolean1.inputMat[1]" 
+		""
+		3 "Couch:polyExtrudeFace1.output" "Couch:deleteComponent1.inputGeometry" 
+		""
+		3 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3.worldMatrix" 
+		"Couch:polyBevel1.manipMatrix" ""
+		3 "Couch:polyTweak1.output" "Couch:polyBevel1.inputPolymesh" ""
+		3 "Couch:deleteComponent3.outputGeometry" "Couch:deleteComponent4.inputGeometry" 
+		""
+		3 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape.worldMatrix" 
+		"Couch:polyExtrudeFace3.manipMatrix" ""
+		3 "Couch:polyExtrudeFace2.output" "Couch:polyExtrudeFace3.inputPolymesh" 
+		""
+		3 "Couch:polyMergeVert3.output" "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape.inMesh" 
+		""
+		3 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "Couch:groupId17.groupId" "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape.compInstObjGroups.compObjectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "Couch:groupId18.groupId" "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		""
+		3 "Couch:polyMergeVert1.output" "Couch:deleteComponent6.inputGeometry" ""
+		
+		3 "Couch:polyBoolean1.output" "Couch:deleteComponent2.inputGeometry" ""
+		3 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape.worldMatrix" 
+		"Couch:polyMergeVert3.manipMatrix" ""
+		3 "Couch:groupParts4.outputGeometry" "Couch:polyMergeVert3.inputPolymesh" 
+		""
+		3 "|CouchRNfosterParent1|Couch:transform5|Couch:Pillow1Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "Couch:groupId19.groupId" "|CouchRNfosterParent1|Couch:transform5|Couch:Pillow1Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|CouchRNfosterParent1|Couch:transform5|Couch:Pillow1Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|CouchRNfosterParent1|Couch:transform5|Couch:Pillow1Shape.compInstObjGroups.compObjectGroups[1]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "Couch:groupId20.groupId" "|CouchRNfosterParent1|Couch:transform5|Couch:Pillow1Shape.compInstObjGroups.compObjectGroups[1].compObjectGroupId" 
+		""
+		3 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape.worldMatrix" 
+		"Couch:polyExtrudeFace1.manipMatrix" ""
+		3 "Couch:polyCube1.output" "Couch:polyExtrudeFace1.inputPolymesh" ""
+		3 "|CouchRNfosterParent1|Couch:transform3|Couch:pCubeShape4.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "Couch:groupId1.groupId" "|Couch:pCube2|Couch:pCubeShape2.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 "Couch:groupParts1.outputGeometry" "|Couch:pCube2|Couch:pCubeShape2.inMesh" 
+		""
+		3 "|Couch:pCube2|Couch:pCubeShape2.instObjGroups.objectGroups[0]" ":initialShadingGroup.dagSetMembers" 
+		"-na"
+		3 ":initialShadingGroup.memberWireframeColor" "|Couch:pCube2|Couch:pCubeShape2.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Couch:pCube2|Couch:pCubeShape2.compInstObjGroups.compObjectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "Couch:groupId2.groupId" "|Couch:pCube2|Couch:pCubeShape2.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		""
+		3 "Couch:groupId17.message" ":initialShadingGroup.groupNodes" "-na"
+		3 "Couch:groupId20.message" ":initialShadingGroup.groupNodes" "-na"
+		3 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape.worldMatrix" 
+		"Couch:polyExtrudeFace5.manipMatrix" ""
+		3 "Couch:polyExtrudeFace4.output" "Couch:polyExtrudeFace5.inputPolymesh" 
+		""
+		3 "Couch:deleteComponent2.outputGeometry" "Couch:deleteComponent3.inputGeometry" 
+		""
+		3 "Couch:groupId1.groupId" "Couch:groupParts1.groupId" ""
+		3 "Couch:polyCube2.output" "Couch:groupParts1.inputGeometry" ""
+		3 "Couch:groupId4.message" ":initialShadingGroup.groupNodes" "-na"
 		3 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom.worldMatrix" 
 		"Couch:polyMergeVert2.manipMatrix" ""
 		3 "Couch:polyExtrudeEdge1.output" "Couch:polyMergeVert2.inputPolymesh" ""
 		
+		3 "Couch:groupId17.groupId" "Couch:groupParts4.groupId" ""
+		3 "Couch:polyUnite1.output" "Couch:groupParts4.inputGeometry" ""
+		3 "Couch:groupId2.message" ":initialShadingGroup.groupNodes" "-na"
+		3 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape.worldMatrix" 
+		"Couch:polyExtrudeFace2.manipMatrix" ""
+		3 "Couch:deleteComponent1.outputGeometry" "Couch:polyExtrudeFace2.inputPolymesh" 
+		""
+		3 "|Couch:loftedSurface2|Couch:transform2|Couch:loftedSurfaceShape2.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "Couch:groupId13.groupId" "|Couch:loftedSurface2|Couch:transform2|Couch:loftedSurfaceShape2.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Couch:loftedSurface2|Couch:transform2|Couch:loftedSurfaceShape2.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Couch:loftedSurface2|Couch:transform2|Couch:loftedSurfaceShape2.compInstObjGroups.compObjectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "Couch:groupId14.groupId" "|Couch:loftedSurface2|Couch:transform2|Couch:loftedSurfaceShape2.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		""
+		3 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape.worldMatrix" 
+		"Couch:polyExtrudeFace4.manipMatrix" ""
+		3 "Couch:polyExtrudeFace3.output" "Couch:polyExtrudeFace4.inputPolymesh" 
+		""
+		3 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom.worldMatrix" 
+		"Couch:polyExtrudeEdge1.manipMatrix" ""
+		3 "Couch:deleteComponent6.outputGeometry" "Couch:polyExtrudeEdge1.inputPolymesh" 
+		""
+		3 "|Couch:loftedSurface2|Couch:transform2|Couch:loftedSurfaceShape2.outMesh" 
+		"Couch:polyUnite1.inputPoly[0]" ""
+		3 "|Couch:loftedSurface1|Couch:transform1|Couch:loftedSurfaceShape1.outMesh" 
+		"Couch:polyUnite1.inputPoly[1]" ""
+		3 "|Couch:loftedSurface2|Couch:transform2|Couch:loftedSurfaceShape2.worldMatrix" 
+		"Couch:polyUnite1.inputMat[0]" ""
+		3 "|Couch:loftedSurface1|Couch:transform1|Couch:loftedSurfaceShape1.worldMatrix" 
+		"Couch:polyUnite1.inputMat[1]" ""
+		3 "Couch:groupId15.message" ":initialShadingGroup.groupNodes" "-na"
+		3 "Couch:deleteComponent4.outputGeometry" "Couch:deleteComponent5.inputGeometry" 
+		""
+		3 "Couch:groupId3.groupId" "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 ":initialShadingGroup.memberWireframeColor" "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "Couch:groupParts2.outputGeometry" "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape.inMesh" 
+		""
+		3 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape.compInstObjGroups.compObjectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "Couch:groupId4.groupId" "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		""
+		3 "|Couch:loftedSurface1|Couch:transform1|Couch:loftedSurfaceShape1.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "Couch:groupId15.groupId" "|Couch:loftedSurface1|Couch:transform1|Couch:loftedSurfaceShape1.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Couch:loftedSurface1|Couch:transform1|Couch:loftedSurfaceShape1.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Couch:loftedSurface1|Couch:transform1|Couch:loftedSurfaceShape1.compInstObjGroups.compObjectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "Couch:groupId16.groupId" "|Couch:loftedSurface1|Couch:transform1|Couch:loftedSurfaceShape1.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		""
+		3 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom.worldMatrix" 
+		"Couch:polyMergeVert1.manipMatrix" ""
+		3 "Couch:deleteComponent5.outputGeometry" "Couch:polyMergeVert1.inputPolymesh" 
+		""
+		3 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "Couch:polyBevel1.output" "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3.inMesh" 
+		""
+		3 "Couch:groupId16.message" ":initialShadingGroup.groupNodes" "-na"
+		3 "Couch:groupId11.message" ":initialShadingGroup.groupNodes" "-na"
+		3 "Couch:groupId12.message" ":initialShadingGroup.groupNodes" "-na"
+		3 "Couch:groupId3.groupId" "Couch:groupParts2.groupId" ""
+		3 "Couch:polyExtrudeFace5.output" "Couch:groupParts2.inputGeometry" ""
+		3 "Couch:polyMergeVert2.output" "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom.inMesh" 
+		""
+		3 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "Couch:groupId1.groupId" "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom.instObjGroups.objectGroups[1]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "Couch:groupId3.groupId" "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom.instObjGroups.objectGroups[1].objectGroupId" 
+		""
+		3 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom.compInstObjGroups.compObjectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "Couch:groupId5.groupId" "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		""
 		3 "|CouchRNfosterParent1|Couch:transform8|Couch:Sofa_TopShape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "Couch:groupId11.groupId" "|CouchRNfosterParent1|Couch:transform8|Couch:Sofa_TopShape.instObjGroups.objectGroups[0].objectGroupId" 
@@ -9089,173 +8363,6 @@ createNode reference -n "CouchRN";
 		3 "|CouchRNfosterParent1|Couch:transform8|Couch:Sofa_TopShape.compInstObjGroups.compObjectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "Couch:groupId10.groupId" "|CouchRNfosterParent1|Couch:transform8|Couch:Sofa_TopShape.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
-		""
-		3 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3.worldMatrix" 
-		"Couch:polyBevel1.manipMatrix" ""
-		3 "Couch:polyTweak1.output" "Couch:polyBevel1.inputPolymesh" ""
-		3 "Couch:groupId16.message" ":initialShadingGroup.groupNodes" "-na"
-		3 "|Couch:loftedSurface1|Couch:transform1|Couch:loftedSurfaceShape1.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "Couch:groupId15.groupId" "|Couch:loftedSurface1|Couch:transform1|Couch:loftedSurfaceShape1.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|Couch:loftedSurface1|Couch:transform1|Couch:loftedSurfaceShape1.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|Couch:loftedSurface1|Couch:transform1|Couch:loftedSurfaceShape1.compInstObjGroups.compObjectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "Couch:groupId16.groupId" "|Couch:loftedSurface1|Couch:transform1|Couch:loftedSurfaceShape1.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
-		""
-		3 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape.worldMatrix" 
-		"Couch:polyExtrudeFace3.manipMatrix" ""
-		3 "Couch:polyExtrudeFace2.output" "Couch:polyExtrudeFace3.inputPolymesh" 
-		""
-		3 "Couch:groupId12.message" ":initialShadingGroup.groupNodes" "-na"
-		3 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape.worldMatrix" 
-		"Couch:polyExtrudeFace5.manipMatrix" ""
-		3 "Couch:polyExtrudeFace4.output" "Couch:polyExtrudeFace5.inputPolymesh" 
-		""
-		3 "Couch:groupId20.message" ":initialShadingGroup.groupNodes" "-na"
-		3 "|Couch:loftedSurface2|Couch:transform2|Couch:loftedSurfaceShape2.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "Couch:groupId13.groupId" "|Couch:loftedSurface2|Couch:transform2|Couch:loftedSurfaceShape2.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|Couch:loftedSurface2|Couch:transform2|Couch:loftedSurfaceShape2.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|Couch:loftedSurface2|Couch:transform2|Couch:loftedSurfaceShape2.compInstObjGroups.compObjectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "Couch:groupId14.groupId" "|Couch:loftedSurface2|Couch:transform2|Couch:loftedSurfaceShape2.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
-		""
-		3 "Couch:groupId2.message" ":initialShadingGroup.groupNodes" "-na"
-		3 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom.worldMatrix" 
-		"Couch:polyMergeVert1.manipMatrix" ""
-		3 "Couch:deleteComponent5.outputGeometry" "Couch:polyMergeVert1.inputPolymesh" 
-		""
-		3 "Couch:groupId13.message" ":initialShadingGroup.groupNodes" "-na"
-		3 "Couch:groupId1.message" ":initialShadingGroup.groupNodes" "-na"
-		3 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape.worldMatrix" 
-		"Couch:polyExtrudeFace4.manipMatrix" ""
-		3 "Couch:polyExtrudeFace3.output" "Couch:polyExtrudeFace4.inputPolymesh" 
-		""
-		3 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape.worldMatrix" 
-		"Couch:polyExtrudeFace1.manipMatrix" ""
-		3 "Couch:polyCube1.output" "Couch:polyExtrudeFace1.inputPolymesh" ""
-		3 "Couch:polyExtrudeFace1.output" "Couch:deleteComponent1.inputGeometry" 
-		""
-		3 "|CouchRNfosterParent1|Couch:transform3|Couch:pCubeShape4.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Couch:loftedSurface2|Couch:transform2|Couch:loftedSurfaceShape2.outMesh" 
-		"Couch:polyUnite1.inputPoly[0]" ""
-		3 "|Couch:loftedSurface1|Couch:transform1|Couch:loftedSurfaceShape1.outMesh" 
-		"Couch:polyUnite1.inputPoly[1]" ""
-		3 "|Couch:loftedSurface2|Couch:transform2|Couch:loftedSurfaceShape2.worldMatrix" 
-		"Couch:polyUnite1.inputMat[0]" ""
-		3 "|Couch:loftedSurface1|Couch:transform1|Couch:loftedSurfaceShape1.worldMatrix" 
-		"Couch:polyUnite1.inputMat[1]" ""
-		3 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape.worldMatrix" 
-		"Couch:polyBoolean1.inputMat[0]" ""
-		3 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape.outMesh" 
-		"Couch:polyBoolean1.inputPoly[0]" ""
-		3 "|Couch:pCube2|Couch:pCubeShape2.outMesh" "Couch:polyBoolean1.inputPoly[1]" 
-		""
-		3 "|Couch:pCube2|Couch:pCubeShape2.worldMatrix" "Couch:polyBoolean1.inputMat[1]" 
-		""
-		3 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom.worldMatrix" 
-		"Couch:polyExtrudeEdge1.manipMatrix" ""
-		3 "Couch:deleteComponent6.outputGeometry" "Couch:polyExtrudeEdge1.inputPolymesh" 
-		""
-		3 "Couch:groupId17.message" ":initialShadingGroup.groupNodes" "-na"
-		3 "Couch:groupId1.groupId" "Couch:groupParts1.groupId" ""
-		3 "Couch:polyCube2.output" "Couch:groupParts1.inputGeometry" ""
-		3 "Couch:deleteComponent4.outputGeometry" "Couch:deleteComponent5.inputGeometry" 
-		""
-		3 "Couch:groupId3.groupId" "Couch:groupParts2.groupId" ""
-		3 "Couch:polyExtrudeFace5.output" "Couch:groupParts2.inputGeometry" ""
-		3 "Couch:groupId3.message" ":initialShadingGroup.groupNodes" "-na"
-		3 "Couch:groupId11.message" ":initialShadingGroup.groupNodes" "-na"
-		3 "Couch:groupId19.message" ":initialShadingGroup.groupNodes" "-na"
-		3 "|CouchRNfosterParent1|Couch:transform5|Couch:Pillow1Shape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "Couch:groupId19.groupId" "|CouchRNfosterParent1|Couch:transform5|Couch:Pillow1Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|CouchRNfosterParent1|Couch:transform5|Couch:Pillow1Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|CouchRNfosterParent1|Couch:transform5|Couch:Pillow1Shape.compInstObjGroups.compObjectGroups[1]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "Couch:groupId20.groupId" "|CouchRNfosterParent1|Couch:transform5|Couch:Pillow1Shape.compInstObjGroups.compObjectGroups[1].compObjectGroupId" 
-		""
-		3 "Couch:groupId14.message" ":initialShadingGroup.groupNodes" "-na"
-		3 "Couch:polyCube3.output" "Couch:polyTweak1.inputPolymesh" ""
-		3 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape.worldMatrix" 
-		"Couch:polyMergeVert3.manipMatrix" ""
-		3 "Couch:groupParts4.outputGeometry" "Couch:polyMergeVert3.inputPolymesh" 
-		""
-		3 "Couch:groupId17.groupId" "Couch:groupParts4.groupId" ""
-		3 "Couch:polyUnite1.output" "Couch:groupParts4.inputGeometry" ""
-		3 "Couch:polyBoolean1.output" "Couch:deleteComponent2.inputGeometry" ""
-		3 "Couch:deleteComponent3.outputGeometry" "Couch:deleteComponent4.inputGeometry" 
-		""
-		3 "Couch:polyMergeVert3.output" "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape.inMesh" 
-		""
-		3 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "Couch:groupId17.groupId" "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape.compInstObjGroups.compObjectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "Couch:groupId18.groupId" "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
-		""
-		3 "Couch:groupId1.groupId" "|Couch:pCube2|Couch:pCubeShape2.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 "Couch:groupParts1.outputGeometry" "|Couch:pCube2|Couch:pCubeShape2.inMesh" 
-		""
-		3 "|Couch:pCube2|Couch:pCubeShape2.instObjGroups.objectGroups[0]" ":initialShadingGroup.dagSetMembers" 
-		"-na"
-		3 ":initialShadingGroup.memberWireframeColor" "|Couch:pCube2|Couch:pCubeShape2.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|Couch:pCube2|Couch:pCubeShape2.compInstObjGroups.compObjectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "Couch:groupId2.groupId" "|Couch:pCube2|Couch:pCubeShape2.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
-		""
-		3 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape.worldMatrix" 
-		"Couch:polyExtrudeFace2.manipMatrix" ""
-		3 "Couch:deleteComponent1.outputGeometry" "Couch:polyExtrudeFace2.inputPolymesh" 
-		""
-		3 "Couch:groupId15.message" ":initialShadingGroup.groupNodes" "-na"
-		3 "Couch:deleteComponent2.outputGeometry" "Couch:deleteComponent3.inputGeometry" 
-		""
-		3 "Couch:polyMergeVert2.output" "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom.inMesh" 
-		""
-		3 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "Couch:groupId1.groupId" "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom.instObjGroups.objectGroups[1]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "Couch:groupId3.groupId" "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom.instObjGroups.objectGroups[1].objectGroupId" 
-		""
-		3 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom.compInstObjGroups.compObjectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "Couch:groupId5.groupId" "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
-		""
-		3 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "Couch:polyBevel1.output" "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3.inMesh" 
-		""
-		3 "Couch:polyMergeVert1.output" "Couch:deleteComponent6.inputGeometry" ""
-		
-		3 "Couch:groupId4.message" ":initialShadingGroup.groupNodes" "-na"
-		3 "Couch:groupId3.groupId" "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 ":initialShadingGroup.memberWireframeColor" "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "Couch:groupParts2.outputGeometry" "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape.inMesh" 
-		""
-		3 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape.compInstObjGroups.compObjectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "Couch:groupId4.groupId" "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
 		"";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
@@ -9321,41 +8428,41 @@ createNode reference -n "FishandGravelRN";
 		
 		2 "|FishandGravel:Gravel" "scale" " -type \"double3\" 0.72823306949317335 0.72823306949317335 0.72823306949317335"
 		
-		3 "|FishandGravel:Gravel|FishandGravel:Water|FishandGravel:WaterShape.instObjGroups" 
+		3 "|FishandGravel:Gravel|FishandGravel:FishFin1|FishandGravel:FishFinShape1.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|FishandGravel:Gravel|FishandGravel:FishTopFin|FishandGravel:FishTopFinShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|FishandGravel:Gravel|FishandGravel:Rock3|FishandGravel:RockShape3.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|FishandGravel:Gravel|FishandGravel:Rock2|FishandGravel:RockShape2.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|FishandGravel:Gravel|FishandGravel:FishTail|FishandGravel:FishTailShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|FishandGravel:Gravel|FishandGravel:GravelShape.instObjGroups" ":initialShadingGroup.dagSetMembers" 
-		"-na"
-		3 "|FishandGravel:Gravel|FishandGravel:Rock|FishandGravel:RockShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|FishandGravel:Gravel|FishandGravel:Rock1|FishandGravel:RockShape1.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|FishandGravel:Gravel|FishandGravel:GrassBlade4|FishandGravel:GrassBladeShape4.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|FishandGravel:Gravel|FishandGravel:Rock4|FishandGravel:RockShape4.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|FishandGravel:Gravel|FishandGravel:GrassBlade2|FishandGravel:GrassBlade2Shape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|FishandGravel:Gravel|FishandGravel:FishFin1|FishandGravel:FishFinShape1.instObjGroups" 
+		3 "|FishandGravel:Gravel|FishandGravel:FishFin|FishandGravel:FishFinShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|FishandGravel:Gravel|FishandGravel:GrassBlade1|FishandGravel:GrassBladeShape1.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|FishandGravel:Gravel|FishandGravel:GrassBlade5|FishandGravel:GrassBladeShape5.instObjGroups" 
+		3 "|FishandGravel:Gravel|FishandGravel:FishTail|FishandGravel:FishTailShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|FishandGravel:Gravel|FishandGravel:FishFin|FishandGravel:FishFinShape.instObjGroups" 
+		3 "|FishandGravel:Gravel|FishandGravel:Rock4|FishandGravel:RockShape4.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|FishandGravel:Gravel|FishandGravel:GravelShape.instObjGroups" ":initialShadingGroup.dagSetMembers" 
+		"-na"
+		3 "|FishandGravel:Gravel|FishandGravel:GrassBlade4|FishandGravel:GrassBladeShape4.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|FishandGravel:Gravel|FishandGravel:Rock3|FishandGravel:RockShape3.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|FishandGravel:Gravel|FishandGravel:Rock|FishandGravel:RockShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|FishandGravel:Gravel|FishandGravel:GrassBlade|FishandGravel:GrassBladeShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|FishandGravel:Gravel|FishandGravel:Rock1|FishandGravel:RockShape1.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|FishandGravel:Gravel|FishandGravel:Fish|FishandGravel:FishShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|FishandGravel:Gravel|FishandGravel:GrassBlade2|FishandGravel:GrassBlade2Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|FishandGravel:Gravel|FishandGravel:GrassBlade3|FishandGravel:GrassBladeShape3.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|FishandGravel:Gravel|FishandGravel:GrassBlade|FishandGravel:GrassBladeShape.instObjGroups" 
+		3 "|FishandGravel:Gravel|FishandGravel:Water|FishandGravel:WaterShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|FishandGravel:Gravel|FishandGravel:GrassBlade5|FishandGravel:GrassBladeShape5.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|FishandGravel:Gravel|FishandGravel:Rock2|FishandGravel:RockShape2.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		5 3 "FishandGravelRN" "|FishandGravel:Gravel|FishandGravel:GravelShape.instObjGroups" 
 		"FishandGravelRN.placeHolderList[1]" ":initialShadingGroup.dsm"
@@ -9420,7 +8527,7 @@ createNode reference -n "LampRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"LampRN"
 		"LampRN" 0
-		"LampRN" 762
+		"LampRN" 44
 		2 "|Lamp:Pole" "translate" " -type \"double3\" 0 0 0"
 		2 "|Lamp:Pole" "rotatePivot" " -type \"double3\" -10 0 -10"
 		2 "|Lamp:Pole" "scalePivot" " -type \"double3\" -10 0 -10"
@@ -9430,66 +8537,7 @@ createNode reference -n "LampRN";
 		
 		2 "|Lamp:Pole|Lamp:sweep3" "scalePivot" " -type \"double3\" -9.99999999999999645 9.07718395517171217 -10.52402615757310933"
 		
-		2 "|Lamp:Pole|Lamp:sweep3|Lamp:sweepShape3" "pnts" " -s 30"
-		2 "|Lamp:Pole|Lamp:sweep3|Lamp:sweepShape3" "pnts[0]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:sweep3|Lamp:sweepShape3" "pnts[1]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:sweep3|Lamp:sweepShape3" "pnts[2]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:sweep3|Lamp:sweepShape3" "pnts[3]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:sweep3|Lamp:sweepShape3" "pnts[4]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:sweep3|Lamp:sweepShape3" "pnts[5]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:sweep3|Lamp:sweepShape3" "pnts[6]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:sweep3|Lamp:sweepShape3" "pnts[7]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:sweep3|Lamp:sweepShape3" "pnts[8]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:sweep3|Lamp:sweepShape3" "pnts[9]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:sweep3|Lamp:sweepShape3" "pnts[10]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:sweep3|Lamp:sweepShape3" "pnts[11]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:sweep3|Lamp:sweepShape3" "pnts[12]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:sweep3|Lamp:sweepShape3" "pnts[13]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:sweep3|Lamp:sweepShape3" "pnts[14]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:sweep3|Lamp:sweepShape3" "pnts[15]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:sweep3|Lamp:sweepShape3" "pnts[16]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:sweep3|Lamp:sweepShape3" "pnts[17]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:sweep3|Lamp:sweepShape3" "pnts[18]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:sweep3|Lamp:sweepShape3" "pnts[19]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:sweep3|Lamp:sweepShape3" "pnts[20]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:sweep3|Lamp:sweepShape3" "pnts[21]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:sweep3|Lamp:sweepShape3" "pnts[22]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:sweep3|Lamp:sweepShape3" "pnts[23]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:sweep3|Lamp:sweepShape3" "pnts[24]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:sweep3|Lamp:sweepShape3" "pnts[25]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:sweep3|Lamp:sweepShape3" "pnts[26]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:sweep3|Lamp:sweepShape3" "pnts[27]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:sweep3|Lamp:sweepShape3" "pnts[28]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:sweep3|Lamp:sweepShape3" "pnts[29]" " -type \"float3\" -10 0 -10"
+		2 "|Lamp:Pole|Lamp:sweep3|Lamp:sweepShape3" "pt[0:29]" " -s 30 -type \"float3\" -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10"
 		
 		2 "|Lamp:Pole|Lamp:Cover" "rotatePivot" " -type \"double3\" -10 8.49472754388193252 -10"
 		
@@ -9504,1395 +8552,32 @@ createNode reference -n "LampRN";
 		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "instObjGroups.objectGroups" 
 		" -s 2"
 		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts" " -s 662"
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[0]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[1]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[2]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[3]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[4]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[5]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[6]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[7]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[8]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[9]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[10]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[11]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[12]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[13]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[14]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[15]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[16]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[17]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[18]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[19]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[20]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[21]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[22]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[23]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[24]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[25]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[26]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[27]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[28]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[29]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[30]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[31]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[32]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[33]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[34]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[35]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[36]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[37]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[38]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[39]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[40]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[41]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[42]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[43]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[44]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[45]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[46]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[47]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[48]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[49]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[50]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[51]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[52]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[53]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[54]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[55]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[56]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[57]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[58]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[59]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[60]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[61]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[62]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[63]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[64]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[65]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[66]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[67]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[68]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[69]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[70]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[71]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[72]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[73]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[74]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[75]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[76]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[77]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[78]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[79]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[80]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[81]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[82]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[83]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[84]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[85]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[86]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[87]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[88]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[89]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[90]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[91]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[92]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[93]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[94]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[95]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[96]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[97]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[98]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[99]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[100]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[101]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[102]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[103]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[104]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[105]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[106]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[107]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[108]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[109]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[110]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[111]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[112]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[113]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[114]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[115]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[116]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[117]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[118]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[119]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[120]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[121]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[122]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[123]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[124]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[125]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[126]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[127]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[128]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[129]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[130]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[131]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[132]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[133]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[134]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[135]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[136]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[137]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[138]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[139]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[140]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[141]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[142]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[143]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[144]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[145]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[146]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[147]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[148]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[149]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[150]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[151]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[152]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[153]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[154]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[155]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[156]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[157]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[158]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[159]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[160]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[161]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[162]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[163]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[164]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[165]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[166]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[167]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[168]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[169]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[170]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[171]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[172]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[173]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[174]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[175]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[176]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[177]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[178]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[179]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[180]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[181]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[182]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[183]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[184]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[185]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[186]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[187]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[188]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[189]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[190]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[191]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[192]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[193]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[194]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[195]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[196]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[197]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[198]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[199]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[200]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[201]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[202]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[203]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[204]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[205]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[206]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[207]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[208]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[209]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[210]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[211]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[212]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[213]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[214]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[215]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[216]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[217]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[218]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[219]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[220]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[221]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[222]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[223]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[224]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[225]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[226]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[227]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[228]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[229]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[230]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[231]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[232]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[233]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[234]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[235]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[236]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[237]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[238]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[239]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[240]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[241]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[242]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[243]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[244]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[245]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[246]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[247]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[248]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[249]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[250]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[251]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[252]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[253]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[254]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[255]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[256]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[257]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[258]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[259]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[260]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[261]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[262]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[263]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[264]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[265]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[266]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[267]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[268]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[269]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[270]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[271]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[272]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[273]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[274]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[275]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[276]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[277]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[278]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[279]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[280]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[281]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[282]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[283]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[284]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[285]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[286]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[287]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[288]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[289]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[290]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[291]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[292]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[293]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[294]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[295]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[296]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[297]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[298]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[299]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[300]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[301]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[302]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[303]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[304]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[305]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[306]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[307]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[308]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[309]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[310]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[311]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[312]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[313]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[314]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[315]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[316]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[317]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[318]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[319]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[320]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[321]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[322]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[323]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[324]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[325]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[326]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[327]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[328]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[329]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[330]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[331]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[332]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[333]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[334]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[335]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[336]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[337]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[338]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[339]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[340]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[341]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[342]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[343]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[344]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[345]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[346]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[347]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[348]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[349]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[350]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[351]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[352]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[353]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[354]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[355]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[356]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[357]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[358]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[359]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[360]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[361]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[362]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[363]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[364]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[365]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[366]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[367]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[368]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[369]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[370]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[371]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[372]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[373]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[374]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[375]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[376]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[377]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[378]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[379]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[380]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[381]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[382]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[383]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[384]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[385]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[386]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[387]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[388]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[389]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[390]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[391]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[392]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[393]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[394]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[395]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[396]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[397]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[398]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[399]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[400]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[401]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[402]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[403]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[404]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[405]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[406]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[407]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[408]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[409]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[410]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[411]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[412]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[413]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[414]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[415]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[416]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[417]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[418]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[419]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[420]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[421]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[422]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[423]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[424]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[425]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[426]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[427]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[428]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[429]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[430]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[431]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[432]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[433]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[434]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[435]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[436]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[437]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[438]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[439]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[440]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[441]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[442]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[443]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[444]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[445]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[446]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[447]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[448]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[449]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[450]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[451]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[452]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[453]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[454]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[455]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[456]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[457]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[458]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[459]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[460]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[461]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[462]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[463]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[464]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[465]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[466]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[467]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[468]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[469]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[470]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[471]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[472]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[473]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[474]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[475]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[476]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[477]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[478]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[479]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[480]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[481]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[482]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[483]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[484]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[485]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[486]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[487]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[488]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[489]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[490]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[491]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[492]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[493]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[494]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[495]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[496]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[497]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[498]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[499]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[500]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[501]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[502]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[503]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[504]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[505]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[506]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[507]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[508]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[509]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[510]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[511]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[512]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[513]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[514]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[515]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[516]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[517]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[518]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[519]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[520]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[521]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[522]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[523]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[524]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[525]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[526]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[527]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[528]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[529]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[530]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[531]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[532]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[533]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[534]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[535]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[536]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[537]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[538]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[539]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[540]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[541]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[542]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[543]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[544]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[545]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[546]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[547]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[548]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[549]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[550]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[551]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[552]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[553]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[554]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[555]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[556]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[557]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[558]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[559]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[560]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[561]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[562]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[563]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[564]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[565]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[566]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[567]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[568]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[569]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[570]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[571]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[572]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[573]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[574]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[575]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[576]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[577]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[578]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[579]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[580]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[581]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[582]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[583]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[584]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[585]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[586]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[587]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[588]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[589]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[590]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[591]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[592]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[593]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[594]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[595]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[596]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[597]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[598]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[599]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[600]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[601]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[602]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[603]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[604]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[605]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[606]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[607]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[608]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[609]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[610]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[611]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[612]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[613]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[614]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[615]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[616]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[617]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[618]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[619]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[620]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[621]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[622]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[623]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[624]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[625]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[626]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[627]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[628]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[629]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[630]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[631]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[632]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[633]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[634]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[635]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[636]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[637]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[638]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[639]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[640]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[641]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[642]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[643]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[644]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[645]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[646]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[647]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[648]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[649]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[650]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[651]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[652]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[653]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[654]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[655]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[656]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[657]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[658]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[659]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[660]" " -type \"float3\" -10 0 -10"
-		
-		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pnts[661]" " -type \"float3\" -10 0 -10"
-		
+		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pt[0:165]" (" -type \"float3\" -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -1"
+		+ "0 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10"
+		)
+		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pt[166:331]" (" -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10"
+		+ " 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10"
+		)
+		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pt[332:497]" (" -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10"
+		+ " 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10"
+		)
+		2 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape" "pt[498:661]" (" -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10"
+		+ " 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10 -10 0 -10"
+		)
 		2 "|Lamp:Pole|Lamp:sweep4" "rotatePivot" " -type \"double3\" -9.99999999999984368 8.98649417874978163 -9.44900277056433424"
 		
 		2 "|Lamp:Pole|Lamp:sweep4" "scalePivot" " -type \"double3\" -9.99999999999984368 8.98649417874978163 -9.44900277056433424"
 		
-		2 "|Lamp:Pole|Lamp:sweep4|Lamp:sweepShape4" "pnts" " -s 30"
-		2 "|Lamp:Pole|Lamp:sweep4|Lamp:sweepShape4" "pnts[0]" " -type \"float3\" -5.77509310000000031 9.11783029999999961 -3.34859749999999989"
-		
-		2 "|Lamp:Pole|Lamp:sweep4|Lamp:sweepShape4" "pnts[1]" " -type \"float3\" -5.70503949999999982 9.20944120000000055 -3.42666769999999987"
-		
-		2 "|Lamp:Pole|Lamp:sweep4|Lamp:sweepShape4" "pnts[2]" " -type \"float3\" -5.63457969999999975 9.32902149999999963 -3.4749188000000002"
-		
-		2 "|Lamp:Pole|Lamp:sweep4|Lamp:sweepShape4" "pnts[3]" " -type \"float3\" -5.59062669999999962 9.4308967999999993 -3.4749188000000002"
-		
-		2 "|Lamp:Pole|Lamp:sweep4|Lamp:sweepShape4" "pnts[4]" " -type \"float3\" -5.58996919999999964 9.47615049999999925 -3.42666769999999987"
-		
-		2 "|Lamp:Pole|Lamp:sweep4|Lamp:sweepShape4" "pnts[5]" " -type \"float3\" -5.63285829999999965 9.44750020000000035 -3.34859749999999989"
-		
-		2 "|Lamp:Pole|Lamp:sweep4|Lamp:sweepShape4" "pnts[6]" " -type \"float3\" -5.70291190000000014 9.35588929999999941 -3.27052640000000006"
-		
-		2 "|Lamp:Pole|Lamp:sweep4|Lamp:sweepShape4" "pnts[7]" " -type \"float3\" -5.7733711999999997 9.23630909999999972 -3.22227530000000018"
-		
-		2 "|Lamp:Pole|Lamp:sweep4|Lamp:sweepShape4" "pnts[8]" " -type \"float3\" -5.81732419999999983 9.13443469999999991 -3.22227530000000018"
-		
-		2 "|Lamp:Pole|Lamp:sweep4|Lamp:sweepShape4" "pnts[9]" " -type \"float3\" -5.81798220000000033 9.08918 -3.27052640000000006"
-		
-		2 "|Lamp:Pole|Lamp:sweep4|Lamp:sweepShape4" "pnts[10]" " -type \"float3\" -6.40017410000000009 8.738018 -4.42102669999999964"
-		
-		2 "|Lamp:Pole|Lamp:sweep4|Lamp:sweepShape4" "pnts[11]" " -type \"float3\" -6.3063640999999997 8.82338050000000074 -4.5144624999999996"
-		
-		2 "|Lamp:Pole|Lamp:sweep4|Lamp:sweepShape4" "pnts[12]" " -type \"float3\" -6.22122189999999975 8.93909930000000053 -4.57220790000000044"
-		
-		2 "|Lamp:Pole|Lamp:sweep4|Lamp:sweepShape4" "pnts[13]" " -type \"float3\" -6.177269 9.04097370000000033 -4.57220790000000044"
-		
-		2 "|Lamp:Pole|Lamp:sweep4|Lamp:sweepShape4" "pnts[14]" " -type \"float3\" -6.19129370000000012 9.09009080000000047 -4.5144624999999996"
-		
-		2 "|Lamp:Pole|Lamp:sweep4|Lamp:sweepShape4" "pnts[15]" " -type \"float3\" -6.25793930000000032 9.06768890000000027 -4.42102669999999964"
-		
-		2 "|Lamp:Pole|Lamp:sweep4|Lamp:sweepShape4" "pnts[16]" " -type \"float3\" -6.3517494000000001 8.98232649999999921 -4.3275914000000002"
-		
-		2 "|Lamp:Pole|Lamp:sweep4|Lamp:sweepShape4" "pnts[17]" " -type \"float3\" -6.43689160000000005 8.86660859999999929 -4.269845"
-		
-		2 "|Lamp:Pole|Lamp:sweep4|Lamp:sweepShape4" "pnts[18]" " -type \"float3\" -6.4808444999999999 8.76473329999999962 -4.269845"
-		
-		2 "|Lamp:Pole|Lamp:sweep4|Lamp:sweepShape4" "pnts[19]" " -type \"float3\" -6.46681979999999967 8.71561720000000051 -4.3275914000000002"
-		
-		2 "|Lamp:Pole|Lamp:sweep4|Lamp:sweepShape4" "pnts[20]" " -type \"float3\" -6.7276688 8.590889 -5.6091704"
-		
-		2 "|Lamp:Pole|Lamp:sweep4|Lamp:sweepShape4" "pnts[21]" " -type \"float3\" -6.63307089999999988 8.68610950000000059 -5.643877"
-		
-		2 "|Lamp:Pole|Lamp:sweep4|Lamp:sweepShape4" "pnts[22]" " -type \"float3\" -6.54744240000000044 8.80791950000000057 -5.66532660000000021"
-		
-		2 "|Lamp:Pole|Lamp:sweep4|Lamp:sweepShape4" "pnts[23]" " -type \"float3\" -6.5034894999999997 8.90979289999999935 -5.66532660000000021"
-		
-		2 "|Lamp:Pole|Lamp:sweep4|Lamp:sweepShape4" "pnts[24]" " -type \"float3\" -6.5180005999999997 8.95281789999999944 -5.64387750000000032"
-		
-		2 "|Lamp:Pole|Lamp:sweep4|Lamp:sweepShape4" "pnts[25]" " -type \"float3\" -6.585434 8.92055990000000065 -5.6091704"
-		
-		2 "|Lamp:Pole|Lamp:sweep4|Lamp:sweepShape4" "pnts[26]" " -type \"float3\" -6.68003129999999956 8.82533929999999955 -5.57446480000000033"
-		
-		2 "|Lamp:Pole|Lamp:sweep4|Lamp:sweepShape4" "pnts[27]" " -type \"float3\" -6.7656603000000004 8.70352940000000075 -5.55301519999999993"
-		
-		2 "|Lamp:Pole|Lamp:sweep4|Lamp:sweepShape4" "pnts[28]" " -type \"float3\" -6.80961320000000025 8.601656 -5.55301519999999993"
-		
-		2 "|Lamp:Pole|Lamp:sweep4|Lamp:sweepShape4" "pnts[29]" " -type \"float3\" -6.7951012000000004 8.55863090000000071 -5.57446480000000033"
-		
+		2 "|Lamp:Pole|Lamp:sweep4|Lamp:sweepShape4" "pt[0:29]" (" -s 30 -type \"float3\" -5.77509310000000031 9.11783029999999961 -3.34859749999999989 -5.70503949999999982 9.20944120000000055 -3.42666769999999987 -5.63457969999999975 9.32902149999999963 -3.4749188000000002 -5.59062669999999962 9.4308967999999993 -3.4749188000000002 -5.58996919999999964 9.47615049999999925 -3.42666769999999987 -5.63285829999999965 9.44750020000000035 -3.34859749999999989 -5.70291190000000014 9.35588929999999941 -3.27052640000000006 -5.7733711999999997 9.23630909999999972 -3.22227530000000018 -5.81732419999999983 9.13443469999999991 -3.22227530000000018 -5.81798220000000033 9.08918 -3.27052640000000006 -6.40017410000000009 8.738018 -4.42102669999999964 -6.3063640999999997 8.82338050000000074 -4.5144624999999996 -6.22122189999999975 8.93909930000000053 -4.57220790000000044 -6.177269 9.04097370000000033 -4.57220790000000044 -6.19129370000000012 9.09009080000000047 -4.5144624999999996 -6.25793930000000032 9.06768890000000027 -4.42102669999999964 -6.3517494000000001 8.98232649999999921 -4.32759140"
+		+ "00000002 -6.43689160000000005 8.86660859999999929 -4.269845 -6.4808444999999999 8.76473329999999962 -4.269845 -6.46681979999999967 8.71561720000000051 -4.3275914000000002 -6.7276688 8.590889 -5.6091704 -6.63307089999999988 8.68610950000000059 -5.643877 -6.54744240000000044 8.80791950000000057 -5.66532660000000021 -6.5034894999999997 8.90979289999999935 -5.66532660000000021 -6.5180005999999997 8.95281789999999944 -5.64387750000000032 -6.585434 8.92055990000000065 -5.6091704 -6.68003129999999956 8.82533929999999955 -5.57446480000000033 -6.7656603000000004 8.70352940000000075 -5.55301519999999993 -6.80961320000000025 8.601656 -5.55301519999999993 -6.7951012000000004 8.55863090000000071 -5.57446480000000033"
+		)
+		3 "Lamp:groupId3.message" ":initialShadingGroup.groupNodes" "-na"
+		3 "|Lamp:Pole|Lamp:sweep3|Lamp:sweepShape3.instObjGroups" ":initialShadingGroup.dagSetMembers" 
+		"-na"
+		3 "Lamp:transformGeometry1.outputGeometry" "|Lamp:Pole|Lamp:PoleShape.inMesh" 
+		""
+		3 "|Lamp:Pole|Lamp:PoleShape.instObjGroups" ":initialShadingGroup.dagSetMembers" 
+		"-na"
 		3 "Lamp:groupId1.groupId" "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
 		3 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape.instObjGroups.objectGroups[0]" 
@@ -10905,20 +8590,13 @@ createNode reference -n "LampRN";
 		""
 		3 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape.compInstObjGroups.compObjectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "Lamp:groupId1.message" ":initialShadingGroup.groupNodes" "-na"
-		3 "Lamp:groupId3.message" ":initialShadingGroup.groupNodes" "-na"
 		3 "Lamp:transformGeometry3.outputGeometry" "|Lamp:Pole|Lamp:Cover|Lamp:CoverShape.inMesh" 
 		""
 		3 "|Lamp:Pole|Lamp:Cover|Lamp:CoverShape.instObjGroups" ":initialShadingGroup.dagSetMembers" 
 		"-na"
-		3 "|Lamp:Pole|Lamp:sweep3|Lamp:sweepShape3.instObjGroups" ":initialShadingGroup.dagSetMembers" 
-		"-na"
 		3 "|Lamp:Pole|Lamp:sweep4|Lamp:sweepShape4.instObjGroups" ":initialShadingGroup.dagSetMembers" 
 		"-na"
-		3 "Lamp:transformGeometry1.outputGeometry" "|Lamp:Pole|Lamp:PoleShape.inMesh" 
-		""
-		3 "|Lamp:Pole|Lamp:PoleShape.instObjGroups" ":initialShadingGroup.dagSetMembers" 
-		"-na"
+		3 "Lamp:groupId1.message" ":initialShadingGroup.groupNodes" "-na"
 		5 4 "LampRN" "|Lamp:Pole|Lamp:PoleShape.inMesh" "LampRN.placeHolderList[1]" 
 		""
 		5 3 "LampRN" "|Lamp:Pole|Lamp:PoleShape.instObjGroups" "LampRN.placeHolderList[2]" 
@@ -10972,7 +8650,7 @@ createNode place2dTexture -n "place2dTexture1";
 createNode bump2d -n "bump2d1";
 	rename -uid "8406B738-4953-7019-7B73-24B3BF709CB0";
 	setAttr ".bd" 0.2976190447807312;
-	setAttr ".vc1" -type "float3" 0 0.00066000008 0 ;
+	setAttr ".vc1" -type "float3" 0 9.9999997e-06 0 ;
 	setAttr ".vc2" -type "float3" 9.9999997e-06 9.9999997e-06 0 ;
 createNode lambert -n "lambert4";
 	rename -uid "7F11EB42-4FDF-E162-5AE0-9BAF75641AE9";
@@ -11345,6 +9023,37 @@ createNode shadingEngine -n "lambert24SG";
 	setAttr ".ro" yes;
 createNode materialInfo -n "materialInfo26";
 	rename -uid "7B7FB49F-4EE2-5ECB-7613-18B09CC8FEF2";
+createNode aiOptions -s -n "defaultArnoldRenderOptions";
+	rename -uid "7DFB403A-4332-7296-1E43-2CA6F2FDE35C";
+	addAttr -ci true -sn "ARV_options" -ln "ARV_options" -dt "string";
+	setAttr ".version" -type "string" "5.5.3";
+createNode aiAOVFilter -s -n "defaultArnoldFilter";
+	rename -uid "0E486E29-461B-AB77-FFB8-41B7D0AD8C75";
+	setAttr ".ai_translator" -type "string" "gaussian";
+createNode aiAOVDriver -s -n "defaultArnoldDriver";
+	rename -uid "57ED078A-42FD-0371-B928-AD8DFC0078B2";
+	setAttr ".ai_translator" -type "string" "exr";
+createNode aiAOVDriver -s -n "defaultArnoldDisplayDriver";
+	rename -uid "A7491862-42CF-FA31-8A7C-3D89BF50FE4A";
+	setAttr ".ai_translator" -type "string" "maya";
+	setAttr ".output_mode" 0;
+createNode aiImagerDenoiserOidn -s -n "defaultArnoldDenoiser";
+	rename -uid "D4D8DF88-4FF1-11DA-24FC-6D9DE576BAAC";
+createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
+	rename -uid "BD9BAD8C-4B25-2E0C-FC32-EE9DB318921B";
+	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
+	setAttr ".tgi[0].vl" -type "double2" -44.047617297323995 -613.09521373302312 ;
+	setAttr ".tgi[0].vh" -type "double2" 604.76188073082676 44.047617297323995 ;
+createNode lightEditor -n "lightEditor";
+	rename -uid "F3C6AE8E-4AC5-C6DD-5AE7-20BA9310BC99";
+createNode lightItem -n "ambientLightShape1__LEItem";
+	rename -uid "E06D0F0D-4046-F0B4-B19F-BD9A3658AF23";
+createNode lightItem -n "spotLightShape1__LEItem";
+	rename -uid "5EAF3684-4A73-AA78-EEA8-35849FB0E0E0";
+createNode lightItem -n "spotLightShape2__LEItem";
+	rename -uid "55E79771-4935-18C6-993D-6D8970203D0F";
+createNode renderSetup -n "renderSetup";
+	rename -uid "0922B384-4DC7-A489-D482-E39D3C76AAF0";
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -11366,6 +9075,8 @@ select -ne :defaultRenderUtilityList1;
 	setAttr -s 2 ".u";
 select -ne :defaultRenderingList1;
 	setAttr -s 4 ".r";
+select -ne :lightList1;
+	setAttr -s 3 ".l";
 select -ne :defaultTextureList1;
 select -ne :standardSurface1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
@@ -11380,9 +9091,13 @@ select -ne :initialParticleSE;
 select -ne :defaultRenderGlobals;
 	addAttr -ci true -h true -sn "dss" -ln "defaultSurfaceShader" -dt "string";
 	setAttr ".ren" -type "string" "arnold";
+	setAttr ".outf" 51;
+	setAttr ".imfkey" -type "string" "exr";
 	setAttr ".dss" -type "string" "openPBR_shader1";
 select -ne :defaultResolution;
 	setAttr ".pa" 1;
+select -ne :defaultLightSet;
+	setAttr -s 3 ".dsm";
 select -ne :defaultColorMgtGlobals;
 	setAttr ".cfe" yes;
 	setAttr ".cfp" -type "string" "<MAYA_RESOURCES>/OCIO-configs/Maya2022-default/config.ocio";
@@ -11395,8 +9110,6 @@ select -ne :defaultColorMgtGlobals;
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
-select -ne :ikSystem;
-	setAttr -s 4 ".sol";
 connectAttr "Vase_and_plantRN.phl[1]" "lambert19SG.dsm" -na;
 connectAttr "Vase_and_plantRN.phl[2]" "lambert19SG.dsm" -na;
 connectAttr "Vase_and_plantRN.phl[3]" "lambert20SG.dsm" -na;
@@ -11514,6 +9227,9 @@ connectAttr "groupId99.id" "MugmeshShape.iog.og[2].gid";
 connectAttr "lambert23SG.mwc" "MugmeshShape.iog.og[2].gco";
 connectAttr "groupId98.id" "MugmeshShape.ciog.cog[1].cgid";
 connectAttr "walllyr.di" "polySurface1.do";
+connectAttr "ambientLightShape1__LEItem.en" "ambientLightShape1.v";
+connectAttr "spotLightShape1__LEItem.en" "spotLightShape1.v";
+connectAttr "spotLightShape2__LEItem.en" "spotLightShape2.v";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "Maya_Lambert1SG.message" ":defaultLightSet.message";
@@ -11788,6 +9504,28 @@ connectAttr "lambert24.oc" "lambert24SG.ss";
 connectAttr "FloorMeshShape.iog" "lambert24SG.dsm" -na;
 connectAttr "lambert24SG.msg" "materialInfo26.sg";
 connectAttr "lambert24.msg" "materialInfo26.m";
+connectAttr ":defaultArnoldDenoiser.msg" ":defaultArnoldRenderOptions.imagers" -na
+		;
+connectAttr ":defaultArnoldDisplayDriver.msg" ":defaultArnoldRenderOptions.drivers"
+		 -na;
+connectAttr ":defaultArnoldFilter.msg" ":defaultArnoldRenderOptions.filt";
+connectAttr ":defaultArnoldDriver.msg" ":defaultArnoldRenderOptions.drvr";
+connectAttr "ambientLightShape1__LEItem.msg" "lightEditor.fi";
+connectAttr "spotLightShape2__LEItem.msg" "lightEditor.li";
+connectAttr "ambientLightShape1.msg" "ambientLightShape1__LEItem.lgt";
+connectAttr "lightEditor.lit" "ambientLightShape1__LEItem.pls";
+connectAttr "lightEditor.en" "ambientLightShape1__LEItem.pen";
+connectAttr "lightEditor.nic" "ambientLightShape1__LEItem.pic";
+connectAttr "spotLightShape1.msg" "spotLightShape1__LEItem.lgt";
+connectAttr "ambientLightShape1__LEItem.nxt" "spotLightShape1__LEItem.prv";
+connectAttr "lightEditor.lit" "spotLightShape1__LEItem.pls";
+connectAttr "lightEditor.en" "spotLightShape1__LEItem.pen";
+connectAttr "lightEditor.nic" "spotLightShape1__LEItem.pic";
+connectAttr "spotLightShape2.msg" "spotLightShape2__LEItem.lgt";
+connectAttr "spotLightShape1__LEItem.nxt" "spotLightShape2__LEItem.prv";
+connectAttr "lightEditor.lit" "spotLightShape2__LEItem.pls";
+connectAttr "lightEditor.en" "spotLightShape2__LEItem.pen";
+connectAttr "lightEditor.nic" "spotLightShape2__LEItem.pic";
 connectAttr "Maya_Lambert1SG.pa" ":renderPartition.st" -na;
 connectAttr "Maya_Lambert2SG.pa" ":renderPartition.st" -na;
 connectAttr "lambert2SG.pa" ":renderPartition.st" -na;
@@ -11843,5 +9581,11 @@ connectAttr "lambert24.msg" ":defaultShaderList1.s" -na;
 connectAttr "place2dTexture1.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "bump2d1.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
+connectAttr "ambientLightShape1.ltd" ":lightList1.l" -na;
+connectAttr "spotLightShape1.ltd" ":lightList1.l" -na;
+connectAttr "spotLightShape2.ltd" ":lightList1.l" -na;
 connectAttr "file1.msg" ":defaultTextureList1.tx" -na;
+connectAttr "ambientLight1.iog" ":defaultLightSet.dsm" -na;
+connectAttr "spotLight1.iog" ":defaultLightSet.dsm" -na;
+connectAttr "spotLight2.iog" ":defaultLightSet.dsm" -na;
 // End of TableandChair.ma
