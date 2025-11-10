@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
 //Name: TableandChair.ma
-//Last modified: Fri, Oct 31, 2025 11:50:28 PM
+//Last modified: Mon, Nov 10, 2025 10:51:01 AM
 //Codeset: 1252
 file -rdi 1 -ns "Vase_and_plant" -rfn "Vase_and_plantRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Github/Essentials-1200/DAGV1100and1200/Maya//scenes/Vase and plant.ma";
@@ -29,24 +29,24 @@ fileInfo "application" "maya";
 fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202507081222-4d6919b75c";
-fileInfo "osv" "Windows 11 Home v2009 (Build: 26100)";
-fileInfo "UUID" "95809171-452B-3CBD-B358-23A25E72A98A";
+fileInfo "osv" "Windows 11 Home v2009 (Build: 26200)";
+fileInfo "UUID" "CC96C31C-498D-6747-212A-369B26AB435F";
 createNode transform -s -n "persp";
 	rename -uid "2312D274-446C-E975-D25A-7DA36234D082";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 50.99158764343035 19.261846720520044 25.331670625505872 ;
-	setAttr ".r" -type "double3" -11.400000000000281 60.600000000001245 0 ;
-	setAttr ".rp" -type "double3" -7.1054273576010019e-15 0 3.5527136788005009e-15 ;
-	setAttr ".rpt" -type "double3" 5.9154096416001567e-15 2.1867320783200619e-15 2.8829214032814157e-15 ;
+	setAttr ".t" -type "double3" 9.0352951800340264 27.074463301962812 43.329525188797916 ;
+	setAttr ".r" -type "double3" -23.399999999999903 10.999999999997909 1.2150315574593094e-15 ;
+	setAttr ".rp" -type "double3" 2.2915003228263231e-13 -5.3290705182007514e-14 0 ;
+	setAttr ".rpt" -type "double3" -1.5980678045516141e-14 2.3405315305208753e-15 -9.3041458504451624e-14 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "A26B4708-4F9F-041D-9FB2-E390644D9DCC";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 65.215399574244231;
+	setAttr ".coi" 52.320900052165193;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" -10 9.4763860702514648 -10.000000476837158 ;
+	setAttr ".tp" -type "double3" -0.1269230842590332 6.2953282101326717 -3.8060015779800338 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "F484FC1A-42AC-219C-E72C-E082C615A611";
@@ -7482,7 +7482,7 @@ createNode spotLight -n "spotLightShape2" -p "spotLight2";
 	setAttr ".cl" -type "float3" 0.98919255 1 0.74399996 ;
 	setAttr ".in" 1.4880952835083008;
 createNode fosterParent -n "Vase_and_plantRNfosterParent1";
-	rename -uid "278FDFB8-4349-8E21-A065-698319A4204F";
+	rename -uid "B2079DBB-4292-72DE-2360-04A04F4AADCF";
 createNode transform -n "pSphere1" -p "Vase_and_plantRNfosterParent1";
 	rename -uid "A14DBEC9-440D-BB8C-DC38-0996F3CB07BB";
 	setAttr ".t" -type "double3" -0.013801358459886615 10.958139023033718 -0.034443734717605423 ;
@@ -7845,7 +7845,7 @@ createNode mesh -n "Dirt1" -p "pSphere1";
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode fosterParent -n "CouchRNfosterParent1";
-	rename -uid "FE9F4F1F-4A20-0E53-9ADB-DA9914769BF8";
+	rename -uid "9F35783A-40A3-40ED-F4D4-848C294DDD26";
 createNode transform -n "Couch:transform5" -p "CouchRNfosterParent1";
 	rename -uid "2B950037-4C8B-BDC2-5F53-3F841344555C";
 	setAttr ".v" no;
@@ -7868,15 +7868,15 @@ createNode transform -n "Couch:transform6" -p "CouchRNfosterParent1";
 	rename -uid "2BB47BBB-4571-EC8D-8F7F-D9B24E47C3EE";
 	setAttr ".v" no;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "AF6D0EF9-4B4B-01B8-ADA1-DB879481DF7B";
+	rename -uid "7B6FC071-4F90-69FC-BE27-69B81A366738";
 	setAttr -s 28 ".lnk";
 	setAttr -s 28 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "7A413C0A-4FE7-CDC1-1DC8-048DA56AF3FD";
+	rename -uid "2A81767D-498A-7B71-9331-3FB3B2CCA3BC";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "EF33CF3C-411C-E3FA-5EED-D89D5748F65E";
+	rename -uid "FD176420-457B-6884-8E90-06BCD0B1948E";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "29712AA5-4454-E8A8-EAC7-FA8C93890966";
+	rename -uid "88C9C0AA-4C78-2A7E-78BC-AF87652E0DA4";
 	setAttr ".cdl" 3;
 	setAttr -s 5 ".dli[1:4]"  1 2 0 3;
 	setAttr -s 3 ".dli";
@@ -7884,7 +7884,7 @@ createNode displayLayer -n "defaultLayer";
 	rename -uid "1D3EA17D-4FAD-5F8B-0B25-A29514ECD05E";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "B65BFEAA-47AE-2B67-47EE-EFAC103602D6";
+	rename -uid "8B2604A4-4E77-EFA9-7634-2488DAAD438D";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "96C6D0FE-48C0-5105-9799-298DD4DD9388";
 	setAttr ".g" yes;
@@ -7973,18 +7973,18 @@ createNode reference -n "Vase_and_plantRN";
 		
 		2 "|Vase_and_plant:Vase" "scale" " -type \"double3\" 0.15774773019589294 0.15774773019589294 0.15774773019589294"
 		
-		3 "|Vase_and_plant:Vase|Vase_and_plant:Dirt|Vase_and_plant:Leaf4|Vase_and_plant:LeafShape4.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Vase_and_plant:Vase|Vase_and_plant:Dirt|Vase_and_plant:Leaf2|Vase_and_plant:LeafShape2.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Vase_and_plant:Vase|Vase_and_plant:Dirt|Vase_and_plant:DirtShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Vase_and_plant:Vase|Vase_and_plant:Dirt|Vase_and_plant:Leaf3|Vase_and_plant:LeafShape3.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Vase_and_plant:Vase|Vase_and_plant:Dirt|Vase_and_plant:Leaf1|Vase_and_plant:LeafShape1.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Vase_and_plant:Vase|Vase_and_plant:VaseShape.instObjGroups" ":initialShadingGroup.dagSetMembers" 
 		"-na"
+		3 "|Vase_and_plant:Vase|Vase_and_plant:Dirt|Vase_and_plant:DirtShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Vase_and_plant:Vase|Vase_and_plant:Dirt|Vase_and_plant:Leaf2|Vase_and_plant:LeafShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Vase_and_plant:Vase|Vase_and_plant:Dirt|Vase_and_plant:Leaf4|Vase_and_plant:LeafShape4.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Vase_and_plant:Vase|Vase_and_plant:Dirt|Vase_and_plant:Leaf3|Vase_and_plant:LeafShape3.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
 		5 3 "Vase_and_plantRN" "|Vase_and_plant:Vase|Vase_and_plant:VaseShape.instObjGroups" 
 		"Vase_and_plantRN.placeHolderList[1]" ":initialShadingGroup.dsm"
 		5 3 "Vase_and_plantRN" "|Vase_and_plant:Vase|Vase_and_plant:Dirt|Vase_and_plant:DirtShape.instObjGroups" 
@@ -8177,127 +8177,14 @@ createNode reference -n "CouchRN";
 		2 "Couch:groupParts4" "groupId" " 129"
 		2 "Couch:polyMergeVert3" "manipMatrix" " -type \"matrix\" 0.32784362723191601 0.005938663867665451 -0.32205737749896357 0 0.29243478167599735 0.18717400224960148 0.30114026199530425 0 0.13504858605759179 -0.41972406554777819 0.12973532383476813 0 -6.3862615170819268 7.58100735124228642 -1.87572363040135581 1"
 		
-		3 "Couch:groupId13.message" ":initialShadingGroup.groupNodes" "-na"
-		3 "Couch:polyCube3.output" "Couch:polyTweak1.inputPolymesh" ""
-		3 "Couch:groupId19.message" ":initialShadingGroup.groupNodes" "-na"
-		3 "Couch:groupId14.message" ":initialShadingGroup.groupNodes" "-na"
-		3 "Couch:groupId1.message" ":initialShadingGroup.groupNodes" "-na"
-		3 "Couch:groupId3.message" ":initialShadingGroup.groupNodes" "-na"
-		3 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape.worldMatrix" 
-		"Couch:polyBoolean1.inputMat[0]" ""
-		3 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape.outMesh" 
-		"Couch:polyBoolean1.inputPoly[0]" ""
-		3 "|Couch:pCube2|Couch:pCubeShape2.outMesh" "Couch:polyBoolean1.inputPoly[1]" 
-		""
-		3 "|Couch:pCube2|Couch:pCubeShape2.worldMatrix" "Couch:polyBoolean1.inputMat[1]" 
-		""
-		3 "Couch:polyExtrudeFace1.output" "Couch:deleteComponent1.inputGeometry" 
-		""
-		3 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3.worldMatrix" 
-		"Couch:polyBevel1.manipMatrix" ""
-		3 "Couch:polyTweak1.output" "Couch:polyBevel1.inputPolymesh" ""
-		3 "Couch:deleteComponent3.outputGeometry" "Couch:deleteComponent4.inputGeometry" 
-		""
-		3 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape.worldMatrix" 
-		"Couch:polyExtrudeFace3.manipMatrix" ""
-		3 "Couch:polyExtrudeFace2.output" "Couch:polyExtrudeFace3.inputPolymesh" 
-		""
-		3 "Couch:polyMergeVert3.output" "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape.inMesh" 
-		""
-		3 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "Couch:groupId17.groupId" "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape.compInstObjGroups.compObjectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "Couch:groupId18.groupId" "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
-		""
-		3 "Couch:polyMergeVert1.output" "Couch:deleteComponent6.inputGeometry" ""
-		
-		3 "Couch:polyBoolean1.output" "Couch:deleteComponent2.inputGeometry" ""
-		3 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape.worldMatrix" 
-		"Couch:polyMergeVert3.manipMatrix" ""
-		3 "Couch:groupParts4.outputGeometry" "Couch:polyMergeVert3.inputPolymesh" 
-		""
-		3 "|CouchRNfosterParent1|Couch:transform5|Couch:Pillow1Shape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "Couch:groupId19.groupId" "|CouchRNfosterParent1|Couch:transform5|Couch:Pillow1Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|CouchRNfosterParent1|Couch:transform5|Couch:Pillow1Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|CouchRNfosterParent1|Couch:transform5|Couch:Pillow1Shape.compInstObjGroups.compObjectGroups[1]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "Couch:groupId20.groupId" "|CouchRNfosterParent1|Couch:transform5|Couch:Pillow1Shape.compInstObjGroups.compObjectGroups[1].compObjectGroupId" 
-		""
-		3 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape.worldMatrix" 
-		"Couch:polyExtrudeFace1.manipMatrix" ""
-		3 "Couch:polyCube1.output" "Couch:polyExtrudeFace1.inputPolymesh" ""
-		3 "|CouchRNfosterParent1|Couch:transform3|Couch:pCubeShape4.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "Couch:groupId1.groupId" "|Couch:pCube2|Couch:pCubeShape2.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 "Couch:groupParts1.outputGeometry" "|Couch:pCube2|Couch:pCubeShape2.inMesh" 
-		""
-		3 "|Couch:pCube2|Couch:pCubeShape2.instObjGroups.objectGroups[0]" ":initialShadingGroup.dagSetMembers" 
-		"-na"
-		3 ":initialShadingGroup.memberWireframeColor" "|Couch:pCube2|Couch:pCubeShape2.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|Couch:pCube2|Couch:pCubeShape2.compInstObjGroups.compObjectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "Couch:groupId2.groupId" "|Couch:pCube2|Couch:pCubeShape2.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
-		""
-		3 "Couch:groupId17.message" ":initialShadingGroup.groupNodes" "-na"
-		3 "Couch:groupId20.message" ":initialShadingGroup.groupNodes" "-na"
-		3 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape.worldMatrix" 
-		"Couch:polyExtrudeFace5.manipMatrix" ""
-		3 "Couch:polyExtrudeFace4.output" "Couch:polyExtrudeFace5.inputPolymesh" 
-		""
-		3 "Couch:deleteComponent2.outputGeometry" "Couch:deleteComponent3.inputGeometry" 
-		""
-		3 "Couch:groupId1.groupId" "Couch:groupParts1.groupId" ""
-		3 "Couch:polyCube2.output" "Couch:groupParts1.inputGeometry" ""
-		3 "Couch:groupId4.message" ":initialShadingGroup.groupNodes" "-na"
-		3 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom.worldMatrix" 
-		"Couch:polyMergeVert2.manipMatrix" ""
-		3 "Couch:polyExtrudeEdge1.output" "Couch:polyMergeVert2.inputPolymesh" ""
-		
-		3 "Couch:groupId17.groupId" "Couch:groupParts4.groupId" ""
-		3 "Couch:polyUnite1.output" "Couch:groupParts4.inputGeometry" ""
-		3 "Couch:groupId2.message" ":initialShadingGroup.groupNodes" "-na"
-		3 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape.worldMatrix" 
-		"Couch:polyExtrudeFace2.manipMatrix" ""
-		3 "Couch:deleteComponent1.outputGeometry" "Couch:polyExtrudeFace2.inputPolymesh" 
-		""
-		3 "|Couch:loftedSurface2|Couch:transform2|Couch:loftedSurfaceShape2.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "Couch:groupId13.groupId" "|Couch:loftedSurface2|Couch:transform2|Couch:loftedSurfaceShape2.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|Couch:loftedSurface2|Couch:transform2|Couch:loftedSurfaceShape2.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|Couch:loftedSurface2|Couch:transform2|Couch:loftedSurfaceShape2.compInstObjGroups.compObjectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "Couch:groupId14.groupId" "|Couch:loftedSurface2|Couch:transform2|Couch:loftedSurfaceShape2.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
-		""
-		3 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape.worldMatrix" 
-		"Couch:polyExtrudeFace4.manipMatrix" ""
-		3 "Couch:polyExtrudeFace3.output" "Couch:polyExtrudeFace4.inputPolymesh" 
-		""
+		3 "Couch:groupId11.message" ":initialShadingGroup.groupNodes" "-na"
 		3 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom.worldMatrix" 
 		"Couch:polyExtrudeEdge1.manipMatrix" ""
 		3 "Couch:deleteComponent6.outputGeometry" "Couch:polyExtrudeEdge1.inputPolymesh" 
 		""
-		3 "|Couch:loftedSurface2|Couch:transform2|Couch:loftedSurfaceShape2.outMesh" 
-		"Couch:polyUnite1.inputPoly[0]" ""
-		3 "|Couch:loftedSurface1|Couch:transform1|Couch:loftedSurfaceShape1.outMesh" 
-		"Couch:polyUnite1.inputPoly[1]" ""
-		3 "|Couch:loftedSurface2|Couch:transform2|Couch:loftedSurfaceShape2.worldMatrix" 
-		"Couch:polyUnite1.inputMat[0]" ""
-		3 "|Couch:loftedSurface1|Couch:transform1|Couch:loftedSurfaceShape1.worldMatrix" 
-		"Couch:polyUnite1.inputMat[1]" ""
-		3 "Couch:groupId15.message" ":initialShadingGroup.groupNodes" "-na"
-		3 "Couch:deleteComponent4.outputGeometry" "Couch:deleteComponent5.inputGeometry" 
+		3 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom.worldMatrix" 
+		"Couch:polyMergeVert1.manipMatrix" ""
+		3 "Couch:deleteComponent5.outputGeometry" "Couch:polyMergeVert1.inputPolymesh" 
 		""
 		3 "Couch:groupId3.groupId" "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
@@ -8311,43 +8198,45 @@ createNode reference -n "CouchRN";
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "Couch:groupId4.groupId" "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
 		""
-		3 "|Couch:loftedSurface1|Couch:transform1|Couch:loftedSurfaceShape1.instObjGroups.objectGroups[0]" 
+		3 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape.worldMatrix" 
+		"Couch:polyExtrudeFace4.manipMatrix" ""
+		3 "Couch:polyExtrudeFace3.output" "Couch:polyExtrudeFace4.inputPolymesh" 
+		""
+		3 "|Couch:loftedSurface2|Couch:transform2|Couch:loftedSurfaceShape2.outMesh" 
+		"Couch:polyUnite1.inputPoly[0]" ""
+		3 "|Couch:loftedSurface1|Couch:transform1|Couch:loftedSurfaceShape1.outMesh" 
+		"Couch:polyUnite1.inputPoly[1]" ""
+		3 "|Couch:loftedSurface2|Couch:transform2|Couch:loftedSurfaceShape2.worldMatrix" 
+		"Couch:polyUnite1.inputMat[0]" ""
+		3 "|Couch:loftedSurface1|Couch:transform1|Couch:loftedSurfaceShape1.worldMatrix" 
+		"Couch:polyUnite1.inputMat[1]" ""
+		3 "Couch:groupId1.groupId" "Couch:groupParts1.groupId" ""
+		3 "Couch:polyCube2.output" "Couch:groupParts1.inputGeometry" ""
+		3 "Couch:deleteComponent4.outputGeometry" "Couch:deleteComponent5.inputGeometry" 
+		""
+		3 "Couch:groupId1.message" ":initialShadingGroup.groupNodes" "-na"
+		3 "Couch:deleteComponent2.outputGeometry" "Couch:deleteComponent3.inputGeometry" 
+		""
+		3 "Couch:groupId1.groupId" "|Couch:pCube2|Couch:pCubeShape2.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 "Couch:groupParts1.outputGeometry" "|Couch:pCube2|Couch:pCubeShape2.inMesh" 
+		""
+		3 "|Couch:pCube2|Couch:pCubeShape2.instObjGroups.objectGroups[0]" ":initialShadingGroup.dagSetMembers" 
+		"-na"
+		3 ":initialShadingGroup.memberWireframeColor" "|Couch:pCube2|Couch:pCubeShape2.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Couch:pCube2|Couch:pCubeShape2.compInstObjGroups.compObjectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "Couch:groupId15.groupId" "|Couch:loftedSurface1|Couch:transform1|Couch:loftedSurfaceShape1.instObjGroups.objectGroups[0].objectGroupId" 
+		3 "Couch:groupId2.groupId" "|Couch:pCube2|Couch:pCubeShape2.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
 		""
-		3 ":initialShadingGroup.memberWireframeColor" "|Couch:loftedSurface1|Couch:transform1|Couch:loftedSurfaceShape1.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|Couch:loftedSurface1|Couch:transform1|Couch:loftedSurfaceShape1.compInstObjGroups.compObjectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "Couch:groupId16.groupId" "|Couch:loftedSurface1|Couch:transform1|Couch:loftedSurfaceShape1.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
-		""
+		3 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3.worldMatrix" 
+		"Couch:polyBevel1.manipMatrix" ""
+		3 "Couch:polyTweak1.output" "Couch:polyBevel1.inputPolymesh" ""
+		3 "Couch:polyBoolean1.output" "Couch:deleteComponent2.inputGeometry" ""
 		3 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom.worldMatrix" 
-		"Couch:polyMergeVert1.manipMatrix" ""
-		3 "Couch:deleteComponent5.outputGeometry" "Couch:polyMergeVert1.inputPolymesh" 
-		""
-		3 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "Couch:polyBevel1.output" "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3.inMesh" 
-		""
-		3 "Couch:groupId16.message" ":initialShadingGroup.groupNodes" "-na"
-		3 "Couch:groupId11.message" ":initialShadingGroup.groupNodes" "-na"
-		3 "Couch:groupId12.message" ":initialShadingGroup.groupNodes" "-na"
-		3 "Couch:groupId3.groupId" "Couch:groupParts2.groupId" ""
-		3 "Couch:polyExtrudeFace5.output" "Couch:groupParts2.inputGeometry" ""
-		3 "Couch:polyMergeVert2.output" "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom.inMesh" 
-		""
-		3 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "Couch:groupId1.groupId" "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom.instObjGroups.objectGroups[1]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "Couch:groupId3.groupId" "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom.instObjGroups.objectGroups[1].objectGroupId" 
-		""
-		3 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom.compInstObjGroups.compObjectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "Couch:groupId5.groupId" "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
-		""
+		"Couch:polyMergeVert2.manipMatrix" ""
+		3 "Couch:polyExtrudeEdge1.output" "Couch:polyMergeVert2.inputPolymesh" ""
+		
 		3 "|CouchRNfosterParent1|Couch:transform8|Couch:Sofa_TopShape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "Couch:groupId11.groupId" "|CouchRNfosterParent1|Couch:transform8|Couch:Sofa_TopShape.instObjGroups.objectGroups[0].objectGroupId" 
@@ -8363,7 +8252,117 @@ createNode reference -n "CouchRN";
 		3 "|CouchRNfosterParent1|Couch:transform8|Couch:Sofa_TopShape.compInstObjGroups.compObjectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "Couch:groupId10.groupId" "|CouchRNfosterParent1|Couch:transform8|Couch:Sofa_TopShape.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
-		"";
+		""
+		3 "Couch:groupId4.message" ":initialShadingGroup.groupNodes" "-na"
+		3 "Couch:groupId12.message" ":initialShadingGroup.groupNodes" "-na"
+		3 "Couch:groupId16.message" ":initialShadingGroup.groupNodes" "-na"
+		3 "Couch:polyExtrudeFace1.output" "Couch:deleteComponent1.inputGeometry" 
+		""
+		3 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape.worldMatrix" 
+		"Couch:polyExtrudeFace3.manipMatrix" ""
+		3 "Couch:polyExtrudeFace2.output" "Couch:polyExtrudeFace3.inputPolymesh" 
+		""
+		3 "Couch:groupId2.message" ":initialShadingGroup.groupNodes" "-na"
+		3 "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "Couch:polyBevel1.output" "|CouchRNfosterParent1|Couch:transform7|Couch:pCubeShape3.inMesh" 
+		""
+		3 "Couch:polyCube3.output" "Couch:polyTweak1.inputPolymesh" ""
+		3 "Couch:groupId15.message" ":initialShadingGroup.groupNodes" "-na"
+		3 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape.worldMatrix" 
+		"Couch:polyExtrudeFace2.manipMatrix" ""
+		3 "Couch:deleteComponent1.outputGeometry" "Couch:polyExtrudeFace2.inputPolymesh" 
+		""
+		3 "|Couch:loftedSurface1|Couch:transform1|Couch:loftedSurfaceShape1.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "Couch:groupId15.groupId" "|Couch:loftedSurface1|Couch:transform1|Couch:loftedSurfaceShape1.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Couch:loftedSurface1|Couch:transform1|Couch:loftedSurfaceShape1.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Couch:loftedSurface1|Couch:transform1|Couch:loftedSurfaceShape1.compInstObjGroups.compObjectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "Couch:groupId16.groupId" "|Couch:loftedSurface1|Couch:transform1|Couch:loftedSurfaceShape1.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		""
+		3 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape.worldMatrix" 
+		"Couch:polyExtrudeFace1.manipMatrix" ""
+		3 "Couch:polyCube1.output" "Couch:polyExtrudeFace1.inputPolymesh" ""
+		3 "Couch:deleteComponent3.outputGeometry" "Couch:deleteComponent4.inputGeometry" 
+		""
+		3 "Couch:groupId19.message" ":initialShadingGroup.groupNodes" "-na"
+		3 "Couch:groupId17.groupId" "Couch:groupParts4.groupId" ""
+		3 "Couch:polyUnite1.output" "Couch:groupParts4.inputGeometry" ""
+		3 "|CouchRNfosterParent1|Couch:transform5|Couch:Pillow1Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "Couch:groupId19.groupId" "|CouchRNfosterParent1|Couch:transform5|Couch:Pillow1Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|CouchRNfosterParent1|Couch:transform5|Couch:Pillow1Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|CouchRNfosterParent1|Couch:transform5|Couch:Pillow1Shape.compInstObjGroups.compObjectGroups[1]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "Couch:groupId20.groupId" "|CouchRNfosterParent1|Couch:transform5|Couch:Pillow1Shape.compInstObjGroups.compObjectGroups[1].compObjectGroupId" 
+		""
+		3 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape.worldMatrix" 
+		"Couch:polyExtrudeFace5.manipMatrix" ""
+		3 "Couch:polyExtrudeFace4.output" "Couch:polyExtrudeFace5.inputPolymesh" 
+		""
+		3 "Couch:groupId13.message" ":initialShadingGroup.groupNodes" "-na"
+		3 "Couch:groupId17.message" ":initialShadingGroup.groupNodes" "-na"
+		3 "Couch:groupId3.message" ":initialShadingGroup.groupNodes" "-na"
+		3 "Couch:polyMergeVert2.output" "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom.inMesh" 
+		""
+		3 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "Couch:groupId1.groupId" "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom.instObjGroups.objectGroups[1]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "Couch:groupId3.groupId" "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom.instObjGroups.objectGroups[1].objectGroupId" 
+		""
+		3 "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom.compInstObjGroups.compObjectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "Couch:groupId5.groupId" "|CouchRNfosterParent1|Couch:transform9|Couch:Sofa_bottom.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		""
+		3 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape.worldMatrix" 
+		"Couch:polyBoolean1.inputMat[0]" ""
+		3 "|CouchRNfosterParent1|Couch:transform6|Couch:Sofa_BottomShape.outMesh" 
+		"Couch:polyBoolean1.inputPoly[0]" ""
+		3 "|Couch:pCube2|Couch:pCubeShape2.outMesh" "Couch:polyBoolean1.inputPoly[1]" 
+		""
+		3 "|Couch:pCube2|Couch:pCubeShape2.worldMatrix" "Couch:polyBoolean1.inputMat[1]" 
+		""
+		3 "Couch:polyMergeVert3.output" "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape.inMesh" 
+		""
+		3 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "Couch:groupId17.groupId" "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape.compInstObjGroups.compObjectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "Couch:groupId18.groupId" "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		""
+		3 "|Couch:loftedSurface2|Couch:transform2|Couch:loftedSurfaceShape2.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "Couch:groupId13.groupId" "|Couch:loftedSurface2|Couch:transform2|Couch:loftedSurfaceShape2.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Couch:loftedSurface2|Couch:transform2|Couch:loftedSurfaceShape2.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Couch:loftedSurface2|Couch:transform2|Couch:loftedSurfaceShape2.compInstObjGroups.compObjectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "Couch:groupId14.groupId" "|Couch:loftedSurface2|Couch:transform2|Couch:loftedSurfaceShape2.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		""
+		3 "Couch:groupId3.groupId" "Couch:groupParts2.groupId" ""
+		3 "Couch:polyExtrudeFace5.output" "Couch:groupParts2.inputGeometry" ""
+		3 "Couch:groupId14.message" ":initialShadingGroup.groupNodes" "-na"
+		3 "Couch:groupId20.message" ":initialShadingGroup.groupNodes" "-na"
+		3 "|CouchRNfosterParent1|Couch:transform4|Couch:PillowShape.worldMatrix" 
+		"Couch:polyMergeVert3.manipMatrix" ""
+		3 "Couch:groupParts4.outputGeometry" "Couch:polyMergeVert3.inputPolymesh" 
+		""
+		3 "|CouchRNfosterParent1|Couch:transform3|Couch:pCubeShape4.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "Couch:polyMergeVert1.output" "Couch:deleteComponent6.inputGeometry" "";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode groupId -n "Couch:groupId26";
@@ -8428,41 +8427,41 @@ createNode reference -n "FishandGravelRN";
 		
 		2 "|FishandGravel:Gravel" "scale" " -type \"double3\" 0.72823306949317335 0.72823306949317335 0.72823306949317335"
 		
-		3 "|FishandGravel:Gravel|FishandGravel:FishFin1|FishandGravel:FishFinShape1.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|FishandGravel:Gravel|FishandGravel:FishTopFin|FishandGravel:FishTopFinShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|FishandGravel:Gravel|FishandGravel:FishFin|FishandGravel:FishFinShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|FishandGravel:Gravel|FishandGravel:GrassBlade1|FishandGravel:GrassBladeShape1.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|FishandGravel:Gravel|FishandGravel:FishTail|FishandGravel:FishTailShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|FishandGravel:Gravel|FishandGravel:Rock4|FishandGravel:RockShape4.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|FishandGravel:Gravel|FishandGravel:GravelShape.instObjGroups" ":initialShadingGroup.dagSetMembers" 
-		"-na"
-		3 "|FishandGravel:Gravel|FishandGravel:GrassBlade4|FishandGravel:GrassBladeShape4.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|FishandGravel:Gravel|FishandGravel:Rock3|FishandGravel:RockShape3.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|FishandGravel:Gravel|FishandGravel:Rock|FishandGravel:RockShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|FishandGravel:Gravel|FishandGravel:GrassBlade|FishandGravel:GrassBladeShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|FishandGravel:Gravel|FishandGravel:Rock1|FishandGravel:RockShape1.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|FishandGravel:Gravel|FishandGravel:Fish|FishandGravel:FishShape.instObjGroups" 
+		3 "|FishandGravel:Gravel|FishandGravel:FishTopFin|FishandGravel:FishTopFinShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|FishandGravel:Gravel|FishandGravel:Rock|FishandGravel:RockShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|FishandGravel:Gravel|FishandGravel:FishFin|FishandGravel:FishFinShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|FishandGravel:Gravel|FishandGravel:Rock2|FishandGravel:RockShape2.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|FishandGravel:Gravel|FishandGravel:GrassBlade2|FishandGravel:GrassBlade2Shape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|FishandGravel:Gravel|FishandGravel:GrassBlade4|FishandGravel:GrassBladeShape4.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|FishandGravel:Gravel|FishandGravel:GravelShape.instObjGroups" ":initialShadingGroup.dagSetMembers" 
+		"-na"
+		3 "|FishandGravel:Gravel|FishandGravel:GrassBlade|FishandGravel:GrassBladeShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|FishandGravel:Gravel|FishandGravel:GrassBlade1|FishandGravel:GrassBladeShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|FishandGravel:Gravel|FishandGravel:GrassBlade3|FishandGravel:GrassBladeShape3.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|FishandGravel:Gravel|FishandGravel:FishTail|FishandGravel:FishTailShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|FishandGravel:Gravel|FishandGravel:FishFin1|FishandGravel:FishFinShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|FishandGravel:Gravel|FishandGravel:Rock4|FishandGravel:RockShape4.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|FishandGravel:Gravel|FishandGravel:Fish|FishandGravel:FishShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|FishandGravel:Gravel|FishandGravel:Water|FishandGravel:WaterShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|FishandGravel:Gravel|FishandGravel:GrassBlade5|FishandGravel:GrassBladeShape5.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|FishandGravel:Gravel|FishandGravel:Rock2|FishandGravel:RockShape2.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		5 3 "FishandGravelRN" "|FishandGravel:Gravel|FishandGravel:GravelShape.instObjGroups" 
 		"FishandGravelRN.placeHolderList[1]" ":initialShadingGroup.dsm"
@@ -8571,12 +8570,17 @@ createNode reference -n "LampRN";
 		2 "|Lamp:Pole|Lamp:sweep4|Lamp:sweepShape4" "pt[0:29]" (" -s 30 -type \"float3\" -5.77509310000000031 9.11783029999999961 -3.34859749999999989 -5.70503949999999982 9.20944120000000055 -3.42666769999999987 -5.63457969999999975 9.32902149999999963 -3.4749188000000002 -5.59062669999999962 9.4308967999999993 -3.4749188000000002 -5.58996919999999964 9.47615049999999925 -3.42666769999999987 -5.63285829999999965 9.44750020000000035 -3.34859749999999989 -5.70291190000000014 9.35588929999999941 -3.27052640000000006 -5.7733711999999997 9.23630909999999972 -3.22227530000000018 -5.81732419999999983 9.13443469999999991 -3.22227530000000018 -5.81798220000000033 9.08918 -3.27052640000000006 -6.40017410000000009 8.738018 -4.42102669999999964 -6.3063640999999997 8.82338050000000074 -4.5144624999999996 -6.22122189999999975 8.93909930000000053 -4.57220790000000044 -6.177269 9.04097370000000033 -4.57220790000000044 -6.19129370000000012 9.09009080000000047 -4.5144624999999996 -6.25793930000000032 9.06768890000000027 -4.42102669999999964 -6.3517494000000001 8.98232649999999921 -4.32759140"
 		+ "00000002 -6.43689160000000005 8.86660859999999929 -4.269845 -6.4808444999999999 8.76473329999999962 -4.269845 -6.46681979999999967 8.71561720000000051 -4.3275914000000002 -6.7276688 8.590889 -5.6091704 -6.63307089999999988 8.68610950000000059 -5.643877 -6.54744240000000044 8.80791950000000057 -5.66532660000000021 -6.5034894999999997 8.90979289999999935 -5.66532660000000021 -6.5180005999999997 8.95281789999999944 -5.64387750000000032 -6.585434 8.92055990000000065 -5.6091704 -6.68003129999999956 8.82533929999999955 -5.57446480000000033 -6.7656603000000004 8.70352940000000075 -5.55301519999999993 -6.80961320000000025 8.601656 -5.55301519999999993 -6.7951012000000004 8.55863090000000071 -5.57446480000000033"
 		)
+		3 "Lamp:groupId1.message" ":initialShadingGroup.groupNodes" "-na"
 		3 "Lamp:groupId3.message" ":initialShadingGroup.groupNodes" "-na"
 		3 "|Lamp:Pole|Lamp:sweep3|Lamp:sweepShape3.instObjGroups" ":initialShadingGroup.dagSetMembers" 
 		"-na"
 		3 "Lamp:transformGeometry1.outputGeometry" "|Lamp:Pole|Lamp:PoleShape.inMesh" 
 		""
 		3 "|Lamp:Pole|Lamp:PoleShape.instObjGroups" ":initialShadingGroup.dagSetMembers" 
+		"-na"
+		3 "Lamp:transformGeometry3.outputGeometry" "|Lamp:Pole|Lamp:Cover|Lamp:CoverShape.inMesh" 
+		""
+		3 "|Lamp:Pole|Lamp:Cover|Lamp:CoverShape.instObjGroups" ":initialShadingGroup.dagSetMembers" 
 		"-na"
 		3 "Lamp:groupId1.groupId" "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
@@ -8590,13 +8594,8 @@ createNode reference -n "LampRN";
 		""
 		3 "|Lamp:Pole|Lamp:Lightbulb|Lamp:LightbulbShape.compInstObjGroups.compObjectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "Lamp:transformGeometry3.outputGeometry" "|Lamp:Pole|Lamp:Cover|Lamp:CoverShape.inMesh" 
-		""
-		3 "|Lamp:Pole|Lamp:Cover|Lamp:CoverShape.instObjGroups" ":initialShadingGroup.dagSetMembers" 
-		"-na"
 		3 "|Lamp:Pole|Lamp:sweep4|Lamp:sweepShape4.instObjGroups" ":initialShadingGroup.dagSetMembers" 
 		"-na"
-		3 "Lamp:groupId1.message" ":initialShadingGroup.groupNodes" "-na"
 		5 4 "LampRN" "|Lamp:Pole|Lamp:PoleShape.inMesh" "LampRN.placeHolderList[1]" 
 		""
 		5 3 "LampRN" "|Lamp:Pole|Lamp:PoleShape.instObjGroups" "LampRN.placeHolderList[2]" 
