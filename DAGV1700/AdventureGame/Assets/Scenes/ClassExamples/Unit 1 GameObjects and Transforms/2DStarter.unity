@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GrayBackground (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3005827437564485342, guid: dcf484c3fd54b4c0a93bb9c7fffccd26, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3729480264920419690, guid: dcf484c3fd54b4c0a93bb9c7fffccd26, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.2
@@ -195,6 +199,10 @@ PrefabInstance:
     - target: {fileID: 3005827437564485342, guid: dcf484c3fd54b4c0a93bb9c7fffccd26, type: 3}
       propertyPath: m_Name
       value: GrayBackground (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3005827437564485342, guid: dcf484c3fd54b4c0a93bb9c7fffccd26, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3729480264920419690, guid: dcf484c3fd54b4c0a93bb9c7fffccd26, type: 3}
       propertyPath: m_LocalPosition.x
@@ -563,6 +571,10 @@ PrefabInstance:
     - target: {fileID: 3005827437564485342, guid: dcf484c3fd54b4c0a93bb9c7fffccd26, type: 3}
       propertyPath: m_Name
       value: GrayBackground (0)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3005827437564485342, guid: dcf484c3fd54b4c0a93bb9c7fffccd26, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3729480264920419690, guid: dcf484c3fd54b4c0a93bb9c7fffccd26, type: 3}
       propertyPath: m_LocalPosition.x
