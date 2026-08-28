@@ -1,6 +1,6 @@
 //Maya ASCII 2027 scene
-//Name: AnimationPage118-129_FinishedEXample.ma
-//Last modified: Thu, Aug 27, 2026 11:56:42 PM
+//Name: KitchenScene.ma
+//Last modified: Thu, Aug 27, 2026 11:57:39 PM
 //Codeset: 1252
 requires maya "2027";
 requires "mtoa" "5.6.2";
@@ -11,7 +11,7 @@ fileInfo "product" "Maya 2027";
 fileInfo "version" "2027";
 fileInfo "cutIdentifier" "202607171511-52c21617ee";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26200)";
-fileInfo "UUID" "BE682983-4D23-304C-C974-8D8890B2B84D";
+fileInfo "UUID" "67D33A40-48C7-38A9-5C91-DFBA0E30DBE1";
 createNode transform -s -n "persp";
 	rename -uid "FB2DE491-463E-A6F7-2D83-0980873F5D71";
 	setAttr ".v" no;
@@ -1339,4 +1339,4 @@ connectAttr "groupId6.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId7.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId8.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId9.msg" ":initialShadingGroup.gn" -na;
-// End of AnimationPage118-129_FinishedEXample.ma
+// End of KitchenScene.ma
