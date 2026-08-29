@@ -1,6 +1,6 @@
 //Maya ASCII 2027 scene
 //Name: KitchenScene.ma
-//Last modified: Thu, Aug 27, 2026 11:57:39 PM
+//Last modified: Fri, Aug 28, 2026 10:34:54 PM
 //Codeset: 1252
 requires maya "2027";
 requires "mtoa" "5.6.2";
@@ -11,17 +11,17 @@ fileInfo "product" "Maya 2027";
 fileInfo "version" "2027";
 fileInfo "cutIdentifier" "202607171511-52c21617ee";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26200)";
-fileInfo "UUID" "67D33A40-48C7-38A9-5C91-DFBA0E30DBE1";
+fileInfo "UUID" "4F6C1317-493E-94CB-5844-6B99FA31DF03";
 createNode transform -s -n "persp";
 	rename -uid "FB2DE491-463E-A6F7-2D83-0980873F5D71";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 28.708969261587832 26.530009158589372 -24.662923456077461 ;
+	setAttr ".t" -type "double3" 28.708969261587196 26.530009158588825 -24.66292345607696 ;
 	setAttr ".r" -type "double3" -33.938352729664153 128.19999999998601 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "A3BE15FA-4147-068F-FB0B-59A623B54084";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 44.561470295124138;
+	setAttr ".coi" 44.561470295123165;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
